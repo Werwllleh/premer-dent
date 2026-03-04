@@ -218,3 +218,19 @@ gulp.task('deploy', function () {
       branch: 'dist'
     }));
 });
+
+gulp.task('build', gulp.series(
+  'clean',
+  'copy',
+  gulp.parallel(
+    'pug',
+    'styles:common',
+    'styles:components',
+    'styles:blocks',
+    'styles:pages',
+    'js:common',
+    'js:components',
+    'js:blocks',
+    'js:pages'
+  )
+));
