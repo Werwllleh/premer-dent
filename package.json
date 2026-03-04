@@ -1,4 +1,9 @@
 {
+  "scripts": {
+    "build": "gulp build",
+    "dev": "gulp",
+    "deploy": "gulp deploy"
+  },
   "devDependencies": {
     "browser-sync": "^3.0.4",
     "cheerio": "^1.0.0",
