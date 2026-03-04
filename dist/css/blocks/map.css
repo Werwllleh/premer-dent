@@ -1,0 +1,128 @@
+.map {
+  position: relative;
+}
+@media (min-width: 768px) {
+  .map {
+    padding-block: 80px;
+  }
+}
+.map__info {
+  position: relative;
+  z-index: 1;
+  border-radius: 24px;
+  padding: 20px;
+  box-shadow: 0 12px 40px 0 rgba(38, 38, 51, 0.08), 0 4px 12px 0 rgba(38, 38, 51, 0.06);
+  background: #ffffff;
+  overflow: hidden;
+}
+@media (min-width: 768px) {
+  .map__info {
+    padding: 24px;
+    box-shadow: 0 20px 32px -4px rgba(38, 38, 51, 0.08), 0 8px 12px -4px rgba(38, 38, 51, 0.08);
+    max-width: 400px;
+  }
+}
+.map__info--contacts {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+@media (min-width: 768px) {
+  .map__info--footer {
+    display: none;
+  }
+}
+.map__info--footer button {
+  width: 100%;
+}
+.map__images {
+  margin-top: 16px;
+}
+.map__images .swiper {
+  margin-inline: -24px;
+  padding-inline: 24px;
+}
+.map__images .swiper .swiper-wrapper {
+  align-items: stretch;
+}
+.map__images .swiper .swiper-wrapper .swiper-slide {
+  width: auto;
+  height: auto;
+}
+.map__images--item img {
+  border-radius: 8px;
+  width: 130px;
+  height: 130px;
+}
+@media (min-width: 768px) {
+  .map__images--item img {
+    width: 100px;
+    height: 100px;
+  }
+}
+.map__category > span {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.4;
+  color: #898ea2;
+}
+.map__category--value {
+  margin-top: 4px;
+}
+.map__category--value a, .map__category--value p, .map__category--value li {
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 1.4;
+  color: #262633;
+}
+.map__category--value a:hover {
+  color: #e41874;
+}
+.map__category--value ul li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.map__category--value ul li + li {
+  margin-top: 4px;
+}
+.map__view {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  z-index: 0;
+  width: 100vw;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+@media (min-width: 768px) {
+  .map__view {
+    display: block;
+  }
+}
+
+.map-element {
+  height: 100%;
+  width: 100%;
+}
+.map-element .map-marker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+.map-element .map-marker img {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.3s ease-in-out;
+}
+.map-element .map-marker:hover img {
+  transform: scale(1.15);
+}

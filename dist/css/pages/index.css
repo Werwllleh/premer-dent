@@ -1,0 +1,33 @@
+.page-index {
+  position: relative;
+  padding-top: 140px;
+}
+.page-index::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  transform: translateX(-50%);
+  margin-left: 50%;
+  height: 100%;
+  background-color: #b4bbc8;
+}
+.page-index__list {
+  padding-block: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.page-index__list li a {
+  display: inline-flex;
+  align-items: center;
+  padding-block: 10px;
+  font-size: 20px;
+  line-height: 1;
+  color: #ffffff;
+}
+.page-index__list li a:hover {
+  color: #e41874;
+}

@@ -1,0 +1,118 @@
+.clinic-about__body {
+  display: grid;
+  grid-template-columns: 100%;
+  gap: 32px 0;
+}
+@media (min-width: 1250px) {
+  .clinic-about__body {
+    align-items: flex-start;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+}
+.clinic-about__text p {
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 1.4;
+  color: rgba(38, 38, 51, 0.5);
+}
+@media (min-width: 768px) {
+  .clinic-about__text p {
+    font-size: 28px;
+  }
+}
+@media (min-width: 1024px) {
+  .clinic-about__text p {
+    font-size: 32px;
+  }
+}
+.clinic-about__text p b {
+  font-weight: inherit;
+  color: #262633;
+}
+.clinic-about__reviews {
+  margin-top: 48px;
+  display: flex;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+@media (min-width: 1250px) {
+  .clinic-about__reviews {
+    margin-top: 40px;
+    flex-wrap: nowrap;
+  }
+}
+.clinic-about__review {
+  background-color: #f5f8fa;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 16px;
+  padding: 24px;
+  min-height: 140px;
+}
+@media (max-width: 550px) {
+  .clinic-about__review.ya {
+    flex: 0 1 calc(50% - 5px);
+  }
+  .clinic-about__review.prodoctorov {
+    flex: 0 1 calc(50% - 5px);
+  }
+  .clinic-about__review.doctu {
+    flex: 1;
+  }
+}
+@media (min-width: 550px) {
+  .clinic-about__review {
+    flex: 1 0 200px;
+  }
+}
+@media (min-width: 1250px) {
+  .clinic-about__review {
+    flex: 0 0 280px;
+    min-height: 250px;
+  }
+}
+.clinic-about__review--estimation {
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 1.1;
+  color: #262633;
+}
+@media (min-width: 768px) {
+  .clinic-about__review--estimation {
+    font-size: 28px;
+  }
+}
+@media (min-width: 1024px) {
+  .clinic-about__review--estimation {
+    font-size: 32px;
+  }
+}
+.clinic-about__review--area {
+  display: inline-flex;
+  justify-content: flex-start;
+}
+.clinic-about__review--area svg {
+  height: 20px;
+  width: auto;
+  color: #898ea2;
+}
+@media (min-width: 1024px) {
+  .clinic-about__review--area svg {
+    height: 24px;
+  }
+}
+.clinic-about__review.ya .clinic-about__review--area svg {
+  width: 72px;
+  height: 21px;
+}
+.clinic-about__review.prodoctorov .clinic-about__review--area svg {
+  width: 157px;
+  height: 18px;
+}
+.clinic-about__review.doctu .clinic-about__review--area svg {
+  width: 75px;
+  height: 20px;
+}

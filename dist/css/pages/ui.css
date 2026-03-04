@@ -1,0 +1,50 @@
+.page-ui {
+  position: relative;
+  padding-top: 130px;
+}
+.page-ui::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  transform: translateX(-50%);
+  margin-left: 50%;
+  height: 100%;
+  background-color: #b4bbc8;
+}
+.page-ui section {
+  margin-top: 30px;
+  padding-block: 40px;
+  padding-inline: 20px;
+}
+.page-ui section.buttons {
+  background: #9747ff;
+  display: flex;
+  gap: 20px;
+}
+.page-ui section h4 {
+  margin-bottom: 20px;
+}
+.page-ui .buttons__list {
+  display: flex;
+  gap: 20px;
+}
+.page-ui .buttons__list--col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  border: 1px dashed #9747ff;
+  border-radius: 5px;
+}
+.page-ui .buttons__list--col:nth-child(4) {
+  border-color: transparent;
+  background: #9747ff;
+}
+.page-ui .buttons__modal {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}

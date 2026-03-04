@@ -1,0 +1,16 @@
+.map-modal {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+}
+.map-modal__map-view {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+.map-modal__map-view .map-element {
+  height: 100%;
+  width: 100%;
+}
