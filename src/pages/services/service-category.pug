@@ -1,0 +1,137 @@
+extends ../../app/pug/layouts/base-secondary
+
+append vars
+  - title = "Services"
+  - description = "Описание Services"
+
+append content
+    +regPage('services')
+    +regComponent('breadcrumbs', true, true)
+    +regBlock('clinic-services', true)
+    +regBlock('banner-consultation', true, true)
+    +regComponent('doctor-publication-card')
+    +regComponent('review-card')
+    +regBlock('map', true, true)
+
+    .page-general
+        .page-general__content
+            .page-service-category
+                .service-hero
+                    .service-hero__inner
+                        .service-hero__breadcrumbs
+                            +breadcrumbs(['Главная', 'Услуги', 'Хирургия'])
+                        h1.service-hero__title Хирургия
+                        .service-hero__description
+                            p Имплантация зубов под ключ в «Премьер Дент Клиник» — точная диагностика, современные имплантаты и прозрачный план лечения
+                        .service-hero__footer
+                            button(data-modal="consultation").btn.primary.small.service-hero__registration--button Записаться на консультацию
+                        .service-hero__image
+                            img(src="./images/page-services/ps1.webp", alt="")
+
+                .clinic-services
+                    .clinic-services__body
+                        .clinic-services__top
+                            p.h2.clinic-services__title Услуги клиники
+                        .clinic-services__items
+                            .clinic-services__item
+                                .clinic-services__item--inner
+                                    p.clinic-services__item--service Лечение и эстетика
+                                    span.clinic-services__item--price
+                                    button.btn.white.clinic-services__item--button
+                                        +svg('arrow-right')
+                                img(src="./images/placeholder-img.jpg").clinic-services__item--img
+                                a(href="#").clinic-services__item--link
+                            .clinic-services__item
+                                .clinic-services__item--inner
+                                    p.clinic-services__item--service Гигиена и профилактика
+                                    span.clinic-services__item--price
+                                    button.btn.white.clinic-services__item--button
+                                        +svg('arrow-right')
+                                img(src="./images/placeholder-img.jpg").clinic-services__item--img
+                                a(href="#").clinic-services__item--link
+                .service-textblock
+                    h3.service-textblock__title Заголовок
+                    .service-textblock__description
+                        p Регулярные осмотры у стоматолога помогают вовремя заметить и остановить кариес, провести профессиональную гигиену для удаления скопившегося налёта и удостовериться, что вашим зубам ничего не угрожает.
+                        p Если вас беспокоит зубная боль, то не откладывайте визит к доктору. Затягивание с решением проблемы может привести к дорогостоящему протезированию или удалению из-за сильного повреждения. В клинике «Премьер Дент Клиник» вам окажут качественную помощь и сохранят зуб.
+                    .service-textblock__image
+                        img(src="./images/placeholder-img.jpg", alt="")
+                .service-price
+                    .service-price__inner
+                        .service-price__info
+                            p.service-price__title Стоимость услуг
+                            ul.service-price__list
+                                li
+                                    p Установка импланта Nobel Biocare (США)
+                                    span 45 000 ₽
+                                li
+                                    p Установка импланта Osstem (Южная Корея)
+                                    span 29 500 ₽
+                                li
+                                    p Временная коронка на импланте (подходит не во всех случаях)
+                                    span 10 000 ₽
+                                li
+                                    p Циркониевая коронка на импланте
+                                    span 42 000 ₽
+                                li
+                                    p Имплант Osstem и циркониевая коронка «под ключ»
+                                    span 71 500 ₽
+                                li
+                                    p Имплант Nobel и циркониевая коронка «под ключ»
+                                    span 87 000 ₽
+                        .service-price-note(style="background-color: #ffe2f4;")
+                            .service-price-note__text
+                                p Итоговая стоимость рассчитывается после диагностики и согласования плана лечения.
+                                    |
+                                    br
+                                    |
+                                    | После утверждения плана цена остаётся неизменной — никаких неожиданных доплат в процессе
+                            .service-price-note__img
+                section.page-service-category__banner-consultation
+                    +bannerConsultation("./images/doctors/doctor7.webp", ["Мухаметзянов Айрат Абуллович", "Врач стоматолог-хирург", "Стаж 31 год"])
+                section.page-service-category__publications
+                    .section-title
+                        h5.h2 Публикации
+                        span.h2 12
+                    .doctor-publications
+                        .doctor-publications-slider
+                            .swiper
+                                .swiper-wrapper
+                                    .swiper-slide
+                                        +doctorPublicationCard('1.webp', "Чем лечить воспаление десен: виды стоматологической помощи", "31 декабря", "122")
+                                    .swiper-slide
+                                        +videoCard("./images/publications/poster.webp")
+                                    .swiper-slide
+                                        +doctorPublicationCard('2.webp', "Сухость во рту у женщин: причины, диагностика и лечение", "16 ноября", "82")
+                                    .swiper-slide
+                                        +doctorPublicationCard('3.webp', "Сухость во рту у мужчин: проявления, причины, лечение", "9 ноября", "666")
+                                    .swiper-slide
+                                        +doctorPublicationCard('1.webp', "Чем лечить воспаление десен: виды стоматологической помощи", "31 декабря", "122")
+                                    .swiper-slide
+                                        +videoCard("./images/publications/poster.webp")
+                            .swiper-button-prev.doctor-publications-slider-prev
+                                +svg("arrow-slider")
+                            .swiper-button-next.doctor-publications-slider-next
+                                +svg("arrow-slider")
+                section.page-service-category__reviews
+                    .section-title
+                        h5.h2 Отзывы
+                        span.h2 16
+                    .doctor-reviews
+                        .doctor-reviews-slider
+                            .swiper
+                                .swiper-wrapper
+                                    .swiper-slide
+                                        +reviewCard("Анастасия", "5,0", "Очень сильно болел зуб, лечила у Авдошиной Юлии, вылечила качественно и без боли. Она наш семейный зубной врач, очень доброжелательная, страх как рукой снимает. Осмотр всегда проводит очень тщательно, чтобы ничего не упустить.", "ya")
+                                    .swiper-slide
+                                        +reviewCard("Виктория", "5,0", "Очень рекомендую Авдошину Юлию Владимировну! Пришла с острой болью, боялась худшего. Врач все подробно объяснила, успокоила и вылечила зуб максимально бережно и безболезненно. Анестезия подействовала идеально. Впервые вышла из стоматологии с улыбкой. Отдельное спасибо за детальные рекомендации по уходу после лечения. Теперь - только к этому врачу!", "2gis")
+                                    .swiper-slide
+                                        +reviewCard("Анонимно", "5,0", "Сегодня была на приёме у Авдошиной Ю. В. У меня откололся зуб, думала, пойдет под удаление. Но Юлия Владимировна врач от Бога, сохранила мой зуб! Если бы все такими были! Профессионализм, клиентоориентированность и просто доброжелательность - всё это на высшем уровне! Спасибо Вам огромное! ", "")
+                                    .swiper-slide
+                                        +reviewCard("Анастасия", "5,0", "", "ya")
+                            .swiper-button-prev.doctor-reviews-slider-prev
+                                +svg("arrow-slider")
+                            .swiper-button-next.doctor-reviews-slider-next
+                                +svg("arrow-slider")
+                section.page-service-category__map
+                    +map()

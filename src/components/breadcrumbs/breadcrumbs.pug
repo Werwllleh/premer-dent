@@ -1,0 +1,19 @@
+mixin breadcrumbs(items=[])
+    //- регистрация
+    //- +regLib('lib-name/lib.js', 'lib-name/lib.css')
+    //- +regComponent('component-name', true, true)
+
+    //breadcrumbs
+    ul.breadcrumbs&attributes(attributes)
+        a.breadcrumbs__back-link(href="./main.html", title="Назад")
+            +svg("arrow")(class="breadcrumbs__back-link-icon")
+        .breadcrumbs__list-box
+            ul.breadcrumbs__list
+              each item, index in items
+                  li.breadcrumbs__item
+                      //- if breadcrumb is single or last
+                      if (items.length === 0 || index === items.length - 1)
+                          span.breadcrumbs__current= item
+                      else
+                          a(href="#" title=item).breadcrumbs__link= item
+                          .breadcrumbs__devider

@@ -1,0 +1,46 @@
+extends ../../app/pug/layouts/base-main
+
+append vars
+  - title = "Ui"
+  - description = "Описание Ui"
+
+append content
+  +regPage('ui', true, true)
+  //- регистрация
+  //- +regLibrary('lib-name/lib.css', 'lib-name/lib.js')
+  //- +regBlock('block-name', true, true)
+  .page-ui
+    h1.h1.page-ui__title UI
+    section
+      .buttons__list
+        .buttons__list--col
+          button.btn.small.primary Button text
+          button(disabled).btn.small.primary Button text
+          hr
+          button.btn.medium.primary Button text
+          button(disabled).btn.medium.primary Button text
+        .buttons__list--col
+          button.btn.small.secondary Button text
+          button(disabled).btn.small.secondary Button text
+          hr
+          button.btn.medium.secondary Button text
+          button(disabled).btn.medium.secondary Button text
+        .buttons__list--col
+          button.btn.small.white Button text
+          button(disabled).btn.small.white Button text
+          hr
+          button.btn.medium.white Button text
+          button(disabled).btn.medium.white Button text
+        .buttons__list--col
+          button.btn.small.light Button text
+          button(disabled).btn.small.light Button text
+          hr
+          button.btn.medium.light Button text
+          button(disabled).btn.medium.light Button text
+    section
+      h4.h3 Модальные окна
+      .buttons__modal
+        button(data-modal="success").btn.small.primary Успех
+        button(data-modal="consultation").btn.small.primary Консультация
+
+

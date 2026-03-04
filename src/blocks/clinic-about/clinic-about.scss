@@ -1,0 +1,145 @@
+@use '../../app/scss/variables.scss' as *;
+@use '../../app/scss/mixins.scss' as *;
+
+// clinic-about
+.clinic-about {
+
+  &__body {
+    display: grid;
+    grid-template-columns: 100%;
+    gap: 32px 0;
+
+    @include w1250 {
+      align-items: flex-start;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+  }
+
+  &__title {
+  }
+
+  &__left {
+  }
+
+  &__right {
+  }
+
+  &__text {
+
+    p {
+      font-weight: 500;
+      font-size: 22px;
+      line-height: 1.4;
+      color: rgba(38, 38, 51, 0.5);
+
+      @include tablet {
+        font-size: 28px;
+      }
+
+      @include desktop {
+        font-size: 32px;
+      }
+
+      b {
+        font-weight: inherit;
+        color: $c950;
+      }
+    }
+  }
+
+  &__reviews {
+    margin-top: 48px;
+    display: flex;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    @include w1250 {
+      margin-top: 40px;
+      flex-wrap: nowrap;
+    }
+  }
+
+  &__review {
+    background-color: $c100;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 16px;
+    padding: 24px;
+    min-height: 140px;
+
+    @media (max-width: $breakpoint-mobile) {
+      &.ya {
+        flex: 0 1 calc(50% - 5px);
+      }
+      &.prodoctorov {
+        flex: 0 1 calc(50% - 5px);
+      }
+      &.doctu {
+        flex: 1;
+      }
+    }
+
+    @include mobile {
+      flex: 1 0 200px;
+    }
+
+    @include w1250 {
+      flex: 0 0 280px;
+      min-height: 250px;
+    }
+
+    &--estimation {
+      font-weight: 600;
+      font-size: 26px;
+      line-height: 1.1;
+      color: $text;
+
+      @include tablet {
+        font-size: 28px;
+      }
+
+      @include desktop {
+        font-size: 32px;
+      }
+    }
+
+    &--area {
+      display: inline-flex;
+      justify-content: flex-start;
+
+      svg {
+        height: 20px;
+        width: auto;
+        color: $c600;
+
+        @include desktop {
+          height: 24px;
+        }
+      }
+    }
+
+    &.ya {
+      .clinic-about__review--area svg {
+        width: 72px;
+        height: 21px;
+      }
+    }
+
+    &.prodoctorov {
+      .clinic-about__review--area svg {
+        width: 157px;
+        height: 18px;
+      }
+    }
+
+    &.doctu {
+      .clinic-about__review--area svg {
+        width: 75px;
+        height: 20px;
+      }
+    }
+  }
+}

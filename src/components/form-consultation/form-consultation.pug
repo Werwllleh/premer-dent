@@ -1,0 +1,39 @@
+mixin formConsultation()
+    //- регистрация
+    //- +regLibrary('lib-name/lib.css', 'lib-name/lib.js')
+    //- +regComponent('component-name', true, true)
+    +regLibrary(false, 'input-mask/input-mask.js')
+    +regComponent('input', true, true)
+    +regComponent('checkbox', true)
+
+    //form-consultation
+    .form-consultation&attributes(attributes)
+        .form-consultation__body
+            .form-consultation__top
+                p.h2.form-consultation__title Записаться на&nbsp;консультацию
+                p.form-consultation__description Заполните форму, мы свяжемся с вами и запишем к нужному специалисту
+            .form-consultation__bottom
+                form(data-form="consultation").form.form-consultation__form
+                    fieldset.form-consultation__form--fieldset
+                        .form-consultation__form--field
+                            .segmented
+                                input.segmented__input(type="hidden", name="connect-type", value="phone", data-input="segmented")
+                                .segmented__wrap
+                                    button(type="button", data-value="phone").segmented__item.active По телефону
+                                    button(type="button", data-value="email").segmented__item По почте
+                                    span.segmented__thumb
+                        .form-consultation__form--field
+                            +input('name', 'Ваше имя', '', '', '', 'required')
+                        .form-consultation__form--field(data-form-field="phone")
+                            +input('phone', 'Номер телефона', 'input--phone','tel', '', 'required')
+                        .form-consultation__form--field(data-form-field="email").hide
+                            +input('email', 'Почта', '','email', '', 'required')
+                        .form-consultation__form--field
+                            label.checkbox
+                                input.checkbox__input(type="checkbox", name="consent", value="agree", required)
+                                span.checkbox__label
+                                    | Даю согласие на
+                                    |
+                                    a(href="#") обработку персональных данных
+                        .form__error(data-form-error)
+                        button(type="submit").btn.primary.medium.form-consultation__form--submit Записаться

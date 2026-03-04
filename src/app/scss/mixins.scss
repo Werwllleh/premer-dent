@@ -1,0 +1,55 @@
+@use './variables.scss' as *;
+
+@mixin w1650 {
+	@media (min-width: $breakpoint-w1650) {
+		@content;
+	}
+}
+
+@mixin laptop {
+	@media (min-width: $breakpoint-laptop) {
+		@content;
+	}
+}
+
+@mixin w1250 {
+	@media (min-width: $breakpoint-w1250) {
+		@content;
+	}
+}
+
+@mixin desktop {
+	@media (min-width: $breakpoint-desktop) {
+		@content;
+	}
+}
+
+@mixin semiDesktop {
+	@media (min-width: $breakpoint-semiDesktop) {
+		@content;
+	}
+}
+
+@mixin tablet {
+	@media (min-width: $breakpoint-tablet) {
+		@content;
+	}
+}
+
+@mixin w650 {
+	@media (min-width: $breakpoint-w650) {
+		@content;
+	}
+}
+
+@mixin mobile {
+	@media (min-width: $breakpoint-mobile) {
+		@content;
+	}
+}
+
+@mixin small {
+	@media (min-width: $breakpoint-small) {
+		@content;
+	}
+}

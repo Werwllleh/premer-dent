@@ -1,0 +1,147 @@
+@use '../../app/scss/variables.scss' as *;
+@use '../../app/scss/mixins.scss' as *;
+
+// breadcrumbs
+.breadcrumbs {
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+
+  &__back-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    height: 100%;
+    margin-block: auto;
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: 13px;
+    color: black;
+    opacity: 0;
+    visibility: hidden;
+    transition: color $transition-default, opacity $transition-default, visibility $transition-default;
+
+    &:hover {
+      .icon {
+        color: blue;
+      }
+    }
+
+    @include desktop {
+
+    }
+  }
+
+  &__back-link-icon {
+    display: block;
+    width: 13px;
+    height: 9px;
+    transform: rotate(90deg);
+    color: slategrey;
+  }
+
+  &__list-box {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+
+    &::before,
+    &::after {
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      width: 50px;
+      height: 100%;
+      opacity: 0;
+      pointer-events: none;
+      content: "";
+      transition: opacity $transition-default;
+    }
+
+    &::before {
+      left: 0;
+      width: 70px;
+      //background-image: linear-gradient(to right, #fff, rgb(255 255 255 / 60%));
+    }
+
+    &::after {
+      right: 0;
+      //background-image: linear-gradient(to left, #fff, transparent);
+    }
+
+    .breadcrumbs--has-right-overflow &::after {
+      opacity: 1;
+    }
+
+    .breadcrumbs--has-left-overflow &::before {
+      opacity: 1;
+    }
+  }
+
+  &__list {
+    position: relative;
+    z-index: 0;
+    display: flex;
+    list-style-type: none;
+    font-weight: 450;
+    font-size: 13px;
+    line-height: 1.5;
+    color: lightgray;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    @include tablet {
+      font-size: 13px;
+    }
+  }
+
+  &__item {
+    display: flex;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 1.4;
+    color: $text-teriary;
+  }
+
+  &__link {
+    color: inherit;
+    transition: color $transition-default;
+    white-space: nowrap;
+
+    &:hover {
+      color: $primary;
+    }
+  }
+
+  &__current {
+    white-space: nowrap;
+    color: $text-secondary;
+  }
+
+  &__devider {
+    margin: 0 4px;
+
+    &::before {
+      content: '/';
+    }
+  }
+
+  &.breadcrumbs--has-left-overflow {
+    .breadcrumbs__back-link {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+}

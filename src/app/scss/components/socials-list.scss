@@ -1,0 +1,51 @@
+@use '../variables.scss' as *;
+
+.socials-list {
+  display: flex;
+  align-items: stretch;
+  gap: 8px;
+
+  li {
+
+    a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px;
+      width: 52px;
+      height: 52px;
+
+      &:hover {
+        svg {
+          color: $primary;
+        }
+      }
+
+      &.vk {
+        svg {
+          width: 20px;
+          height: 12px;
+        }
+      }
+
+      &.telegram {
+        svg {
+          width: 19px;
+          height: 18px;
+        }
+      }
+
+      &.whatsapp {
+        svg {
+          width: 20px;
+          height: 20px;
+        }
+      }
+
+      svg {
+        color: $text;
+      }
+    }
+
+  }
+}

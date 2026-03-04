@@ -1,0 +1,133 @@
+mixin footer()
+    //- регистрация
+    //- +regLibrary('lib-name/lib.css', 'lib-name/lib.js')
+    //- +regComponent('component-name', true, true)
+    +regBlock('cookie', true, true)
+    +regBlock('socials', true)
+    +regComponent('modal', true, true)
+
+    //footer
+    footer.footer&attributes(attributes)
+        .footer__container.container
+            .footer__body
+                .footer__top
+                    a(href="/").footer__logo
+                        img(src="./images/logo.png", alt="Логотип Премьер Дент")
+                    nav.footer__nav
+                        ul.footer__nav--list
+                            li
+                                a(href="#").footer__nav--link Услуги
+                            li
+                                a(href="#").footer__nav--link Акции
+                            li
+                                a(href="#").footer__nav--link Врачи
+                            li
+                                a(href="#").footer__nav--link Цены
+                            li
+                                a(href="#").footer__nav--link О нас
+                            li
+                                a(href="#").footer__nav--link Статьи
+                            li
+                                a(href="#").footer__nav--link Отзывы
+                            li
+                                a(href="#").footer__nav--link Контакты
+                .footer__middle
+                    .footer__contacts
+                        .footer__contacts--top
+                            a(href="tel:+78422416426") +7 (8422) 41 64 26
+                            a(href="mailto:hello@premerdent.ru") hello@premerdent.ru
+                        .footer__contacts--middle
+                            button(data-modal="consultation").btn.medium.primary.footer__consultation-button Записаться на консультацию
+                        .footer__contacts--bottom
+                            ul.footer__socials.socials-list
+                                li
+                                    a(href="#", target="_blank" rel="noopener noreferrer").btn.secondary.vk
+                                        +svg('vk')
+                                li
+                                    a(href="#", target="_blank" rel="noopener noreferrer").btn.secondary.telegram
+                                        +svg('telegram')
+                                li
+                                    a(href="#", target="_blank" rel="noopener noreferrer").btn.secondary.whatsapp
+                                        +svg('whatsapp')
+                    nav.footer__menu
+                        .footer__menu--group
+                            a(href="#").footer__menu--category Лечение и эстетика
+                            ul
+                                li
+                                    a(href="#").footer__menu--link Лечение кариеса
+                                li
+                                    a(href="#").footer__menu--link Гигиена и профилактика
+                                li
+                                    a(href="#").footer__menu--link Лечение пульпита
+                                li
+                                    a(href="#").footer__menu--link Лечение периодонтита
+                                li
+                                    a(href="#").footer__menu--link Отбеливание зубов
+                                li
+                                    a(href="#").footer__menu--link Реставрация зубов
+                        .footer__menu--group
+                            a(href="#").footer__menu--category Хирургия
+                            ul
+                                li
+                                    a(href="#").footer__menu--link Удаление зубов
+                                li
+                                    a(href="#").footer__menu--link Синус лифтинг и костная пластика
+                        .footer__menu--group
+                            a(href="#").footer__menu--category Имплантация
+                            ul
+                                li
+                                    a(href="#").footer__menu--link Имплантация с немедленной нагрузкой
+                                li
+                                    a(href="#").footer__menu--link Имплантация с отсроченной нагрузкой
+                        .footer__menu--group
+                            a(href="#").footer__menu--category Ортодонтия
+                        .footer__menu--group
+                            a(href="#").footer__menu--category Пародонтология
+                        .footer__menu--group
+                            a(href="#").footer__menu--category Детская стоматология
+                        .footer__menu--group
+                            a(href="#").footer__menu--category Диагностика
+                    .footer__middle--nav
+                        nav.footer__nav
+                            ul.footer__nav--list
+                                li
+                                    a(href="#").footer__nav--link Услуги
+                                li
+                                    a(href="#").footer__nav--link Акции
+                                li
+                                    a(href="#").footer__nav--link Врачи
+                                li
+                                    a(href="#").footer__nav--link Цены
+                                li
+                                    a(href="#").footer__nav--link О нас
+                                li
+                                    a(href="#").footer__nav--link Статьи
+                                li
+                                    a(href="#").footer__nav--link Отзывы
+                                li
+                                    a(href="#").footer__nav--link Контакты
+                .footer__bottom
+                    .footer__disclaimer
+                        .footer__disclaimer--copyright
+                            | Премьер Дент Клиник ©
+                            |
+                            span
+                        p.footer__disclaimer--warning
+                            | Имеются противопоказания,
+                            br
+                            | необходима консультация специалиста
+                    ul.footer__inform
+                        li
+                            a(href="#") Согласие на обработку персональных данных
+                        li
+                            a(href="#") Пользовательское соглашение
+                        li
+                            a(href="#") Юридическая информация
+
+    +cookie()
+    +socials()
+    +modal('modal1', 'modal1')
+    +modal('modal2', 'modal2')
+    +modal('map', 'map')
+    +modal('consultation', 'consultation')
+    +modal('success', 'success')

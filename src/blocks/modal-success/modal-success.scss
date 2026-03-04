@@ -1,0 +1,35 @@
+@use '../../app/scss/variables.scss' as *;
+
+// modal-success
+.modal-success {
+
+  &__inner {}
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__title {
+    text-align: center;
+  }
+
+  &__description {
+    margin-top: 20px;
+    text-align: center;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 1.4;
+    color: $text;
+  }
+
+  &__close-button {
+    margin-top: 48px;
+    position: relative;
+    top: auto;
+    right: auto;
+    width: auto;
+    height: auto;
+  }
+}

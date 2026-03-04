@@ -1,0 +1,55 @@
+mixin map()
+    //- регистрация
+    +regLibrary('swiper/swiper-bundle.min.css', 'swiper/swiper-bundle.min.js')
+    +regComponent('modal', true, true)
+
+    //map
+    .map&attributes(attributes)
+        .map__inner
+            .map__info
+                p.h3.map__title Контакты
+                .map__images
+                    .swiper
+                        .swiper-wrapper(data-lightgallery)
+                            .swiper-slide(data-src="./images/map/1.webp")
+                                .map__images--item
+                                    a(href="./images/map/1.webp")
+                                        img(src="./images/map/1.webp")
+                            .swiper-slide(data-src="./images/map/2.webp")
+                                .map__images--item
+                                    a(href="./images/map/2.webp")
+                                        img(src="./images/map/2.webp")
+                            .swiper-slide(data-src="./images/map/3.webp")
+                                .map__images--item
+                                    a(href="./images/map/3.webp")
+                                        img(src="./images/map/3.webp")
+                            .swiper-slide(data-src="./images/map/4.webp")
+                                .map__images--item
+                                    a(href="./images/map/4.webp")
+                                        img(src="./images/map/4.webp")
+                .map__info--contacts
+                    .map__category
+                        span Адрес
+                        .map__category--value
+                            a(href="https://yandex.ru/maps/195/ulyanovsk/?ll=48.389410%2C54.311642&mode=poi&poi%5Bpoint%5D=48.388909%2C54.311624&poi%5Buri%5D=ymapsbm1%3A%2F%2Forg%3Foid%3D1125366534&utm_campaign=desktop&utm_medium=search&utm_source=maps&z=18.55", target="_blank", rel="noopener noreferrer") г.Ульяновск, ул.Л.Толстого, 38/16
+                    .map__category
+                        span Номер
+                        .map__category--value
+                            a(href="tel:+78422416426") +7 (8422) 41-64-26
+                    .map__category
+                        span Время работы
+                        .map__category--value
+                            ul
+                                li
+                                    span Будние дни
+                                    span 8:00 – 20:00
+                                li
+                                    span Суббота
+                                    span 9:00 – 16:00
+                                li
+                                    span Воскресенье
+                                    span Выходной
+                    .map__info--footer
+                        button(data-modal="map").btn.small.secondary.map--show-btn Показать на карте
+        .map__view
+            .map-element

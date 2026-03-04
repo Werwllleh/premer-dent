@@ -1,0 +1,233 @@
+extends ../../app/pug/layouts/base-secondary
+
+append vars
+  - title = "Цены"
+  - description = "Описание Цены"
+
+append content
+    +regPage('price')
+    //- регистрация
+    //- +regLibrary('lib-name/lib.css', 'lib-name/lib.js')
+    //- +regBlock('block-name', true, true)
+    +regComponent('breadcrumbs', true, true)
+    +regBlock('banner-consultation', true, true)
+    +regBlock('map', true, true)
+
+    .page-general.price
+        .page-general__breadcrumbs
+            +breadcrumbs(['Главная', 'Цены'])
+        .page-general__header
+            h1.page-general__title Цены
+        .page-general__content
+            .price__body
+                .price__left
+                    .price__left--actions
+                        ul.price__services
+                            li
+                                button(type="button", data-service-id="1").btn.small.price__services--item Консультация
+                            li
+                                button(type="button", data-service-id="2").btn.small.price__services--item Терапия
+                            li
+                                button(type="button", data-service-id="3").btn.small.price__services--item Хирургия
+                            li
+                                button(type="button", data-service-id="4").btn.small.price__services--item Имплантация зубов
+                            li
+                                button(type="button", data-service-id="5").btn.small.price__services--item Ортопедия
+                            li
+                                button(type="button", data-service-id="6").btn.small.price__services--item Ортодонтия
+                            li
+                                button(type="button", data-service-id="7").btn.small.price__services--item Профилактика
+                            li
+                                button(type="button", data-service-id="8").btn.small.price__services--item Детская стоматология
+                        a(href="./test.pdf" download="test.pdf").btn.secondary.small.price__button-download
+                            +svg("download")
+                            | Полный прайс в PDF
+                .price__right
+                    ul.price__list
+                        li
+                            .price__service(data-service="1")
+                                .price__service--body
+                                    .price__service--top
+                                        p Консультация
+                                        img(src="./images/price/1.webp", alt="")
+                                    .price__service--middle
+                                        ul.price__service--list
+                                            li
+                                                p Первичная консультация
+                                                span 1 000 ₽
+                                    .price__service--bottom
+                                        .price__service--banner(style="background-color: #0e4457;")
+                                            p КТ входит в стоимость первичной консультации
+                                            img(src="./images/price/banner-1.png", alt="")
+                        li
+                            .price__service(data-service="2")
+                                .price__service--body
+                                    .price__service--top
+                                        p Терапия
+                                        img(src="./images/price/2.webp", alt="")
+                                    .price__service--middle
+                                        ul.price__service--list
+                                            li
+                                                p Лечение начального кариеса
+                                                span от 4&nbsp;000&nbsp;₽
+                                            li
+                                                p Лечение среднего кариеса
+                                                span от 5&nbsp;500&nbsp;₽
+                                            li
+                                                p Лечение глубокого кариеса
+                                                span от 6&nbsp;500&nbsp;₽
+                                            li
+                                                p Композитная реставрация переднего зуба
+                                                span от 7&nbsp;500&nbsp;₽
+                                            li
+                                                p Лечение каналов зуба
+                                                span 6&nbsp;000&nbsp;–&nbsp;17&nbsp;000&nbsp;₽
+                                            li
+                                                p Перелечивание каналов зуба
+                                                span 10&nbsp;000&nbsp;–&nbsp;24&nbsp;500&nbsp;₽
+                                            li
+                                                p Кабинетное отбеливание ZOOM3
+                                                span 35&nbsp;000&nbsp;₽
+                        li
+                            .price__service(data-service="3")
+                                .price__service--body
+                                    .price__service--top
+                                        p Хирургия
+                                        img(src="./images/price/3.webp", alt="")
+                                    .price__service--middle
+                                        ul.price__service--list
+                                            li
+                                                p Удаление постоянного зуба
+                                                span 2&nbsp;000&nbsp;₽
+                                            li
+                                                p Удаление зуба мудрости
+                                                span 5&nbsp;000&nbsp;–&nbsp;15&nbsp;000&nbsp;₽
+                                            li
+                                                p Закрытый синус-лифтинг
+                                                span 20&nbsp;000&nbsp;₽
+                                            li
+                                                p Открытый синус-лифтинг
+                                                span 27&nbsp;000&nbsp;₽
+                        li
+                            .price__service(data-service="4")
+                                .price__service--body
+                                    .price__service--top
+                                        p Имплантация зубов
+                                        img(src="./images/price/3.webp", alt="")
+                                    .price__service--middle
+                                        ul.price__service--list
+                                            li
+                                                p Установка импланта Nobel Biocare (США)
+                                                span 45&nbsp;000&nbsp;₽
+                                            li
+                                                p Установка импланта Osstem (Южная Корея)
+                                                span 29&nbsp;500&nbsp;₽
+                                            li
+                                                p Временная коронка на импланте (подходит не во всех случаях)
+                                                span 10&nbsp;000&nbsp;₽
+                                            li
+                                                p Циркониевая коронка на импланте
+                                                span 42&nbsp;000&nbsp;₽
+                                            li
+                                                p Имплант Osstem и циркониевая коронка «под ключ»
+                                                span 71&nbsp;500&nbsp;₽
+                                            li
+                                                p Имплант Nobel и циркониевая коронка «под ключ»
+                                                span 87&nbsp;000&nbsp;₽
+                        li
+                            .price__service(data-service="5")
+                                .price__service--body
+                                    .price__service--top
+                                        p Ортопедия
+                                        img(src="./images/price/3.webp", alt="")
+                                    .price__service--middle
+                                        ul.price__service--list
+                                            li
+                                                p Циркониевая коронка
+                                                span 25&nbsp;000&nbsp;₽
+                                            li
+                                                p Керамическая коронка E.max
+                                                span 30&nbsp;000&nbsp;₽
+                                            li
+                                                p Керамический винир E.max
+                                                span 30&nbsp;000&nbsp;₽
+                        li
+                            .price__service(data-service="6")
+                                .price__service--body
+                                    .price__service--top
+                                        p Ортодонтия
+                                        img(src="./images/price/3.webp", alt="")
+                                    .price__service--middle
+                                        ul.price__service--list
+                                            li
+                                                p Лечение на брекетах (металлические, все включено)
+                                                span 170&nbsp;000&nbsp;₽
+                                            li
+                                                p Лечение на брекетах (керамические, все включено)
+                                                span 200&nbsp;000&nbsp;₽
+                                            li
+                                                p Лечение на элайнерах (лёгкий случай, все включено)
+                                                span 249&nbsp;000&nbsp;₽
+                                            li
+                                                p Лечение на элайнерах (1 зубной ряд)
+                                                span 149&nbsp;000&nbsp;₽
+                                            li
+                                                p Установка мини-винта
+                                                span 15&nbsp;000&nbsp;₽
+                                            li
+                                                p Установка ретейнера (1 челюсть)
+                                                span 5&nbsp;000&nbsp;₽
+                        li
+                            .price__service(data-service="7")
+                                .price__service--body
+                                    .price__service--top
+                                        p Профилактика
+                                        img(src="./images/price/3.webp", alt="")
+                                    .price__service--middle
+                                        ul.price__service--list
+                                            li
+                                                p Профессиональная гигиена у детей
+                                                span 1&nbsp;500&nbsp;–&nbsp;4&nbsp;000&nbsp;₽
+                                            li
+                                                p Профессиональная гигиена у взрослых (повторная, каждые полгода)
+                                                span 4&nbsp;500&nbsp;₽
+                                            li
+                                                p Профессиональная гигиена у взрослых (первичная, первый раз в клинике)
+                                                span 6&nbsp;000&nbsp;₽
+                                            li
+                                                p Профессиональная гигиена после брекетов
+                                                span 7&nbsp;000&nbsp;₽
+                                    .price__service--bottom
+                                        .price__service--banner.dark(style="background-color: #ecfcca;")
+                                            p Мы рекомендуем средства Curaprox для домашнего ухода
+                                            img(src="./images/price/banner-2.png", alt="")
+                        li
+                            .price__service(data-service="8")
+                                .price__service--body
+                                    .price__service--top
+                                        p Детская стоматология
+                                        img(src="./images/price/3.webp", alt="")
+                                    .price__service--middle
+                                        ul.price__service--list
+                                            li
+                                                p Первичная консультация детского стоматолога
+                                                span 500&nbsp;₽
+                                            li
+                                                p Удаление молочного зуба
+                                                span 1&nbsp;000&nbsp;₽
+                                            li
+                                                p Лечение кариеса молочного зуба
+                                                span 2&nbsp;000&nbsp;–&nbsp;4&nbsp;000&nbsp;₽
+                                            li
+                                                p Лечение каналов молочного зуба с установкой пломбы
+                                                span 6&nbsp;900&nbsp;₽
+                                            li
+                                                p Лечение детскими пластинками
+                                                span 15&nbsp;000&nbsp;₽
+                    a(href="./test.pdf" download="test.pdf").btn.secondary.small.price__button-download
+                        +svg("download")
+                        | Полный прайс в PDF
+            section.price__banner-consultation
+                +bannerConsultation()
+            section.price__map
+                +map()

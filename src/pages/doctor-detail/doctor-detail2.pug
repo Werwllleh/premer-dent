@@ -1,0 +1,171 @@
+extends ../../app/pug/layouts/base-secondary.pug
+
+append vars
+  - title = "Doctor-detail"
+  - description = "Описание Doctor-detail"
+
+append content
+    +regLibrary('swiper/swiper-bundle.min.css', 'swiper/swiper-bundle.min.js')
+    +regPage('doctor-detail')
+    +regComponent('breadcrumbs', true, true)
+    +regComponent('doctor-card')
+    +regComponent('doctor-publication-card')
+    +regComponent('review-card')
+    +regBlock('banner-consultation', true, true)
+    +regBlock('other-doctors')
+    +regBlock('map', true, true)
+
+    .page-general
+        .page-general__breadcrumbs
+            +breadcrumbs(['Главная', 'Врачи'])
+        .page-general__content
+            .doctor-detail
+                .doctor-detail__grid
+                    .doctor-detail__grid--left
+                        a(href="./doctors.html").btn.white.doctor-detail__back-button
+                            +svg("arrow-left2")
+                    .doctor-detail__grid--right
+                        .doctor-detail__about
+                            .doctor-detail__about--preview
+                                +videoCard("./images/doctors/doctor.webp")
+                            .doctor-detail__about--description
+                                .doctor-rating
+                                    span.doctor-rating__icon
+                                        img(src="./images/megaphone.png", alt="")
+                                    .doctor-rating__info
+                                        .doctor-rating__site
+                                            img(src="./images/pd-icon.png" alt="")
+                                        .doctor-rating__value
+                                            span
+                                                +svg("star3")
+                                            span
+                                                +svg("star3")
+                                            span
+                                                +svg("star3")
+                                            span
+                                                +svg("star3")
+                                            span
+                                                +svg("star3")
+                                    .doctor-rating__footer
+                                        a(href="tel:+78422416426").btn.secondary.doctor-rating__phone
+                                            +svg("phone")
+                                        button(data-modal="consultation").btn.small.primary.doctor-rating__record Записаться
+                                p.h2.doctor-detail__about--title Авдошина Юлия Владимировна
+                                .doctor-detail__about--features
+                                    p Врач-стоматолог-терапевт
+                                    span
+                                    p стаж 21 год
+                                .doctor-detail__about--text
+                                    p Я зубной врач с более 20 летним стажем работы. Регулярно прохожу обучения по современным методам лечения и повышаю свой профессионализм, поэтому мне доверяют даже самые требовательные пациенты. Занимаюсь эстетической реставрацией, как передних, так и жевательных зубов. Работаю с  микроскопом.
+                                button(data-modal="consultation").btn.primary.large.doctor-detail__about--button Записаться
+                        section.doctor-detail__services
+                            h5 Услуги
+                            .doctor-services
+                                ul
+                                    li
+                                        p Лечение начального кариеса
+                                        span от 4 000 ₽
+                                    li
+                                        p Лечение среднего кариеса
+                                        span от 5 500 ₽
+                                    li
+                                        p Лечение глубокого кариеса
+                                        span от 6 500 ₽
+                                    li
+                                        p Композитная реставрация переднего зуба
+                                        span от 7 500 ₽
+                                    li
+                                        p Лечение каналов зуба
+                                        span 6 000 – 17 000 ₽
+                                    li
+                                        p Перелечивание каналов зуба
+                                        span 10 000 – 24 500 ₽
+                                    li
+                                        p Кабинетное отбеливание ZOOM3
+                                        span 35 000 ₽
+
+                        section.doctor-detail__works
+                            h5 Работы врача
+                            .doctor-works
+                                .doctor-works-slider
+                                    .swiper
+                                        .swiper-wrapper
+                                            .swiper-slide
+                                                +videoCard("./images/works/poster.webp")
+                                            .swiper-slide
+                                                .doctor-works-slider__photo
+                                                    img(src="./images/works/1.webp")
+                                            .swiper-slide
+                                                .doctor-works-slider__photo
+                                                    img(src="./images/works/2.webp")
+                                            .swiper-slide
+                                                .doctor-works-slider__photo
+                                                    img(src="./images/works/3.webp")
+                        section.doctor-detail__publications
+                            h5 Публикации
+                            .doctor-publications
+                                .doctor-publications-slider
+                                    .swiper
+                                        .swiper-wrapper
+                                            .swiper-slide
+                                                +doctorPublicationCard('1.webp', "Чем лечить воспаление десен: виды стоматологической помощи", "31 декабря", "122")
+                                            .swiper-slide
+                                                +videoCard("./images/publications/poster.webp")
+                                            .swiper-slide
+                                                +doctorPublicationCard('2.webp', "Сухость во рту у женщин: причины, диагностика и лечение", "16 ноября", "82")
+                                            .swiper-slide
+                                                +doctorPublicationCard('3.webp', "Сухость во рту у мужчин: проявления, причины, лечение", "9 ноября", "666")
+                        section.doctor-detail__reviews
+                            h5 Отзывы
+                            .doctor-reviews
+                                .doctor-reviews-slider
+                                    .swiper
+                                        .swiper-wrapper
+                                            .swiper-slide
+                                                +reviewCard("Анастасия", "5,0", "Очень сильно болел зуб, лечила у Авдошиной Юлии, вылечила качественно и без боли. Она наш семейный зубной врач, очень доброжелательная, страх как рукой снимает. Осмотр всегда проводит очень тщательно, чтобы ничего не упустить.", "ya")
+                                            .swiper-slide
+                                                +reviewCard("Виктория", "5,0", "Очень рекомендую Авдошину Юлию Владимировну! Пришла с острой болью, боялась худшего. Врач все подробно объяснила, успокоила и вылечила зуб максимально бережно и безболезненно. Анестезия подействовала идеально. Впервые вышла из стоматологии с улыбкой. Отдельное спасибо за детальные рекомендации по уходу после лечения. Теперь - только к этому врачу!", "2gis")
+                                            .swiper-slide
+                                                +reviewCard("Анонимно", "5,0", "Сегодня была на приёме у Авдошиной Ю. В. У меня откололся зуб, думала, пойдет под удаление. Но Юлия Владимировна врач от Бога, сохранила мой зуб! Если бы все такими были! Профессионализм, клиентоориентированность и просто доброжелательность - всё это на высшем уровне! Спасибо Вам огромное! ", "")
+                                            .swiper-slide
+                                                +reviewCard("Анастасия", "5,0", "", "ya")
+                        section.doctor-detail__achievements
+                            .doctor-education
+                                h5 Образование
+                                ul.doctor-education__list
+                                    li.doctor-education__item
+                                        span.doctor-education__item--icon
+                                            +svg("education")
+                                        .doctor-education__item--info
+                                            p.doctor-education__item--title
+                                                | Ульяновский базовый медицинский колледж
+                                            p.doctor-education__item--text
+                                                | Государственное образовательное учреждение среднего профессионального образования
+                                            span.doctor-education__item--year 2004 год
+                            .doctor-certificates
+                                h5 Сертификаты
+                                .doctor-certificates-slider
+                                    .swiper
+                                        .swiper-wrapper(data-lightgallery)
+                                            .swiper-slide(data-src="./images/certs/full.webp")
+                                                a(href="./images/certs/full.webp")
+                                                    img(src="./images/certs/preview.webp")
+                                            .swiper-slide(data-src="./images/certs/full.webp")
+                                                a(href="./images/certs/full.webp")
+                                                    img(src="./images/certs/preview.webp")
+                                            .swiper-slide(data-src="./images/certs/full.webp")
+                                                a(href="./images/certs/full.webp")
+                                                    img(src="./images/certs/preview.webp")
+                                            .swiper-slide(data-src="./images/certs/full.webp")
+                                                a(href="./images/certs/full.webp")
+                                                    img(src="./images/certs/preview.webp")
+                                            .swiper-slide(data-src="./images/certs/full.webp")
+                                                a(href="./images/certs/full.webp")
+                                                    img(src="./images/certs/preview.webp")
+                section.doctor-detail__banner-consultation
+                    +bannerConsultation("./images/doctors/doctor.webp")
+                section.doctor-detail__others
+                    +otherDoctors()
+                section.doctor-detail__map
+                    +map()
+

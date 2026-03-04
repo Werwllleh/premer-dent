@@ -1,0 +1,169 @@
+@use './variables.scss' as *;
+@use './mixins.scss' as *;
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    transition: all $transition-default;
+}
+
+a, a:link, a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+/* Common */
+
+aside, nav, footer, header, section, main {
+    display: block;
+}
+
+/*h1, h2, h3, h4, h5, h6, p {
+    font-size: inherit;
+    font-weight: inherit;
+}*/
+
+ul, ul li {
+    list-style: none;
+}
+
+img {
+    vertical-align: top;
+}
+
+img, svg {
+    max-width: 100%;
+    height: auto;
+}
+
+svg {
+    transition: all $transition-default;
+}
+
+address {
+    font-style: normal;
+}
+
+/* Form */
+
+input, textarea, button, select, fieldset {
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+input::-ms-clear {
+    display: none;
+}
+
+button, input[type="submit"] {
+    display: inline-block;
+    box-shadow: none;
+    background-color: transparent;
+    background: none;
+    cursor: pointer;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+input:focus, input:active,
+button:focus, button:active {
+    outline: none;
+}
+
+button::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+}
+
+label {
+    cursor: pointer;
+}
+
+legend {
+    display: block;
+}
+
+html {
+    overflow-x: clip;
+
+    &.block {
+        overflow: hidden;
+    }
+}
+
+body, html {
+    scroll-behavior: smooth;
+}
+
+body {
+    display: flex !important;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: clip;
+    min-width: 320px;
+    scroll-behavior: smooth;
+    text-rendering: optimizeSpeed;
+    -webkit-font-smoothing: antialiased;
+}
+
+.page {
+    flex: 1;
+
+    &__container {}
+
+    &__content {
+
+    }
+}
+
+.hide {
+    display: none !important;
+}
+
+.overlay {
+    position: fixed;
+    z-index: 50;
+    inset: 0;
+    background-color: $overlay;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity $transition-default, visibility $transition-default;
+
+    &.active {
+        opacity: 0.12;
+        visibility: visible;
+    }
+}
+
+.container {
+    margin: 0 auto;
+    padding-inline: 16px;
+    max-width: 1332px;
+    width: 100%;
+
+    @include tablet {
+        padding-inline: 20px;
+        max-width: 1340px;
+    }
+
+    @include w1250 {
+        padding-inline: 30px;
+        max-width: 1360px;
+    }
+}

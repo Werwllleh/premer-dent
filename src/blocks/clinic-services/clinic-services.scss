@@ -1,0 +1,158 @@
+@use '../../app/scss/variables.scss' as *;
+@use '../../app/scss/mixins.scss' as *;
+
+// clinic-services
+.clinic-services {
+
+  &__body {}
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    .clinic-services__all-services {
+      display: none;
+
+      @include tablet {
+        display: flex;
+      }
+    }
+  }
+
+  &__title {}
+
+  &__all-services {
+
+  }
+
+  &__items {
+    margin-top: 32px;
+    display: grid;
+    grid-template-columns: 100%;
+    align-items: stretch;
+    gap: 10px;
+
+    @include tablet {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include semiDesktop {
+      margin-top: 40px;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 3fr));
+      gap: 20px;
+    }
+
+  }
+
+  &__item {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    min-height: 275px;
+
+    @include desktop {
+      min-height: 320px;
+    }
+
+    &:nth-child(n+6) {
+      display: none;
+
+      @include tablet {
+        display: block;
+      }
+    }
+
+    &::before, &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+    }
+
+    &::before {
+      background: linear-gradient(180deg, rgba(38, 38, 51, 0.5) 10%, rgba(38, 38, 51, 0.05) 50%);
+    }
+
+    &::after {
+      opacity: 0;
+      background: linear-gradient(180deg, rgba(38, 38, 51, 0.8) 10%, rgba(38, 38, 51, 0.2) 50%);
+      transition: opacity $transition-default;
+    }
+
+    &:hover {
+      &::after {
+        opacity: 1;
+      }
+    }
+
+    &--inner {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 24px;
+      height: 100%;
+    }
+
+    &--service {
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 1.1;
+      color: $text-light;
+
+      @include desktop {
+        font-size: 24px;
+      }
+    }
+
+    &--price {
+      margin-top: 6px;
+      font-weight: 500;
+      font-size: 17px;
+      line-height: 1.4;
+      color: $text-light;
+      opacity: 0.8;
+    }
+
+    &--button {
+      margin-top: auto;
+      padding: 17px 20px;
+
+      svg {
+        width: 8px;
+        height: 14px;
+        color: $text;
+      }
+    }
+
+    &--img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+      z-index: -1;
+    }
+
+    &--link {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+    }
+  }
+
+  &__bottom {
+    margin-top: 50px;
+
+    .clinic-services__all-services {
+      width: 100%;
+
+      @include tablet {
+        display: none;
+      }
+    }
+  }
+}

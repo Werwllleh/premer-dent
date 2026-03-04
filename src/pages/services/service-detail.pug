@@ -1,0 +1,338 @@
+extends ../../app/pug/layouts/base-secondary
+
+append vars
+  - title = "Services"
+  - description = "Описание Services"
+
+append content
+    +regPage('services')
+    +regComponent('breadcrumbs', true, true)
+    +regBlock('clinic-services', true)
+    +regBlock('banner-consultation', true, true)
+    +regBlock('clinic-achievements', true, true)
+    +regComponent('review-card')
+    +regBlock('map', true, true)
+
+    .page-general
+        .page-general__content
+            .page-service-detail
+                .service-hero
+                    .service-hero__inner
+                        .service-hero__breadcrumbs
+                            +breadcrumbs(['Главная', 'Услуги', 'Имплантация', 'Дентальная имплантация с прогнозируемым результатом'])
+                        h1.service-hero__title Дентальная имплантация с прогнозируемым результатом
+                        .service-hero__description
+                            p Имплантация зубов под ключ в «Премьер Дент Клиник» — точная диагностика, современные имплантаты и прозрачный план лечения
+                        .service-hero__footer
+                            button(data-modal="consultation").btn.primary.small.service-hero__registration--button Записаться на консультацию
+                            p Имплантация под ключ от 87 000 ₽
+                        .service-hero__image
+                            img(src="./images/page-services/ps2.webp", alt="")
+
+
+                .service-advantages
+                    ul.service-advantages__list
+                        li
+                            p КТ и цифровое планирование
+                        li
+                            p Премиальные имплантаты
+                        li
+                            p Опытные хирурги-имплантологи
+                        li
+                            p Прозрачная стоимость
+
+
+                .service-suitable
+                    p.h2.service-suitable__title Кому подойдет дентальная имплантация
+                    .service-suitable__list
+                        .service-suitable-card
+                            .service-suitable-card__info
+                                p.service-suitable-card__title Отсутствует один или несколько зубов
+                                p.service-suitable-card__text Установим имплант и коронку, не обтачивая соседние здоровые зубы
+                            .service-suitable-card__img
+                                img(src="./images/page-services/mouth.webp", alt="")
+                        .service-suitable-card
+                            .service-suitable-card__info
+                                p.service-suitable-card__title Есть съёмный протез и хочется более комфортное решение
+                                p.service-suitable-card__text Проведём бережное удаление и, если возможно, сразу установим имплант
+                        .service-suitable-card
+                            .service-suitable-card__info
+                                p.service-suitable-card__title Зуб невозможно спасти
+                                p.service-suitable-card__text Проведём бережное удаление и, если возможно, сразу установим имплант
+                        .service-suitable-card
+                            .service-suitable-card__info
+                                p.service-suitable-card__title Важно восстановить жевание и эстетику
+                                p.service-suitable-card__text Возвращение полноценной жевательной функции и уверенной улыбки
+
+
+                .service-reasons
+                    p.h2.service-reasons__title Почему имплантацию выбирают у нас
+                    .service-reasons__slider
+                        +clinicAchievements()
+
+                .service-standards
+                    p.h2.service-standards__title Технологии и стандарты
+                    .service-standards__swiper
+                        .swiper
+                            .swiper-wrapper
+                                .swiper-slide
+                                    .service-standard-card
+                                        span.service-standard-card__index 1
+                                        p.service-standard-card__text Работаем только с проверенными системами
+                                .swiper-slide
+                                    .service-standard-card
+                                        span.service-standard-card__index 2
+                                        p.service-standard-card__text КТ-диагностика и цифровое планирование операции
+                                .swiper-slide
+                                    .service-standard-card
+                                        span.service-standard-card__index 3
+                                        p.service-standard-card__text Точное позиционирование импланта
+                                .swiper-slide
+                                    .service-standard-card
+                                        span.service-standard-card__index 4
+                                        p.service-standard-card__text Строгий контроль стерильности и безопасности
+
+
+                .service-variants
+                    p.h2.service-variants__title Варианты установки имплантов
+                    .service-variants__items
+                        .service-variant
+                            .service-variant__inner
+                                .service-variant__image
+                                    img(src="./images/page-services/mouth.webp", alt="")
+                                .service-variant__info
+                                    p.service-variant__title Одномоментная
+                                    p.service-variant__description Установка импланта на место только что удалённого зуба за один визит. Идеально для сохранения эстетики десны и экономии вашего времени
+                                .service-variant__list
+                                    p.service-variant__list--title Показания
+                                    ul
+                                        li Сразу после удаления зуба
+                                        li Когда не нужно наращивать кость
+                                .service-variant__list
+                                    p.service-variant__list--title Преимущества
+                                    ul
+                                        li Установка импланта и коронки за 1 час
+                                        li Быстрое восстановление и приживаемость
+                                .service-variant__footer
+                                    button(data-modal="consultation").btn.primary.small.service-variant__registration--button Записаться на консультацию
+
+
+                        .service-variant
+                            .service-variant__inner
+                                .service-variant__image
+                                    img(src="./images/page-services/mouth.webp", alt="")
+                                .service-variant__info
+                                    p.service-variant__title Классическая
+                                    p.service-variant__description Установка импланта в зажившую кость спустя несколько месяцев после удаления зуба. Идеально для обеспечения максимальной стабильности и надёжного результата в любых ситуациях
+                                .service-variant__list
+                                    p.service-variant__list--title Показания
+                                    ul
+                                        li Зуб удалён давно
+                                        li Недостаток костной ткани
+                                .service-variant__list
+                                    p.service-variant__list--title Преимущества
+                                    ul
+                                        li Надёжный метод имплантации
+                                        li Предотвращает атрофию костной ткани
+                                        li Срок приживления 2–6 месяцев
+                                .service-variant__footer
+                                    button(data-modal="consultation").btn.primary.small.service-variant__registration--button Записаться на консультацию
+
+
+
+
+                .service-types
+                    p.h2.service-types__title Виды имплантов
+                    .service-types__swiper
+                        .swiper
+                            .swiper-wrapper
+                                .swiper-slide
+                                    .service-type
+                                        .service-type__inner
+                                            .service-type__image
+                                                img(src="./images/page-services/type1.webp", alt="")
+                                            .service-type__info
+                                                p.service-type__title Osstem TS SA
+                                                ul.service-type__list
+                                                    li Очистка титана 95%
+                                                    li Стабильная первичная фиксация
+                                            .service-type__footer
+                                                .service-type-price
+                                                    .service-type-price__header
+                                                        p.service-type-price__title Цена под ключ
+                                                        .service-type-information
+                                                            button.service-type-information__button
+                                                                +svg("help")
+                                                            .service-type-information__list
+                                                                p
+                                                                    | Имплант — 31 000 ₽
+                                                                    br
+                                                                    | Формирователь десны — 4 500 ₽
+                                                                    br
+                                                                    | Циркониевая Коронка — 45 000 ₽
+                                                    span.service-type-price__value 80 500 ₽
+
+
+
+
+
+                                .swiper-slide
+                                    .service-type
+                                        .service-type__inner
+                                            .service-type__image
+                                                img(src="./images/page-services/type1.webp", alt="")
+                                            .service-type__info
+                                                p.service-type__title Osstem Premium TS SOI
+                                                ul.service-type__list
+                                                    li Очистка титана 75%
+                                                    li Ускоренная и качественная остеоинтеграция даже в сложный клинический случаях
+                                            .service-type__footer
+                                                .service-type-price
+                                                    .service-type-price__header
+                                                        p.service-type-price__title Цена под ключ
+                                                        .service-type-information
+                                                            button.service-type-information__button
+                                                                +svg("help")
+                                                            .service-type-information__list
+                                                                p
+                                                                    | Имплант — 31 000 ₽
+                                                                    br
+                                                                    | Формирователь десны — 4 500 ₽
+                                                                    br
+                                                                    | Циркониевая Коронка — 45 000 ₽
+                                                    span.service-type-price__value 88 500 ₽
+
+                                .swiper-slide
+                                    .service-type
+                                        .service-type__inner
+                                            .service-type__image
+                                                img(src="./images/page-services/type2.webp", alt="")
+                                            .service-type__info
+                                                p.service-type__title Nobel Biocare
+                                                ul.service-type__list
+                                                    li Очистка титана 97%
+                                                    li Комплексная реабилитация во всех случаях
+                                            .service-type__footer
+                                                .service-type-price
+                                                    .service-type-price__header
+                                                        p.service-type-price__title Цена под ключ
+                                                        .service-type-information
+                                                            button.service-type-information__button
+                                                                +svg("help")
+                                                            .service-type-information__list
+                                                                p
+                                                                    | Имплант — 31 000 ₽
+                                                                    br
+                                                                    | Формирователь десны — 4 500 ₽
+                                                                    br
+                                                                    | Циркониевая Коронка — 45 000 ₽
+                                                    span.service-type-price__value 106 000 ₽
+
+
+
+
+
+                                .swiper-slide
+                                    .service-type
+                                        .service-type__inner
+                                            .service-type__image
+                                                img(src="./images/page-services/type3.webp", alt="")
+                                            .service-type__info
+                                                p.service-type__title Straumann
+                                                ul.service-type__list
+                                                    li Очистка титана 100%
+                                                    li Высокий срок службы имплантов
+                                            .service-type__footer
+                                                .service-type-price
+                                                    .service-type-price__header
+                                                        p.service-type-price__title Цена под ключ
+                                                        .service-type-information
+                                                            button.service-type-information__button
+                                                                +svg("help")
+                                                            .service-type-information__list
+                                                                p
+                                                                    | Имплант — 31 000 ₽
+                                                                    br
+                                                                    | Формирователь десны — 4 500 ₽
+                                                                    br
+                                                                    | Циркониевая Коронка — 45 000 ₽
+                                                    span.service-type-price__value 121 000 ₽
+
+                .service-steps
+                    p.h2.service-steps__title Как проходит имплантация в «Премьер Дент Клиник»
+                    ul.service-steps__list
+                        li.service-step
+                            span.service-step__index 1
+                            p.service-step__title Консультация и диагностика
+                            p.service-step__text Проводим КТ, оцениваем объём костной ткани, состояние прикуса и общее состояние здоровья
+                        li.service-step
+                            span.service-step__index 2
+                            p.service-step__title План лечения
+                            p.service-step__text Подробно обсуждаем этапы, сроки, итоговую стоимость и возможные варианты систем
+                        li.service-step
+                            span.service-step__index 3
+                            p.service-step__title Установка импланта
+                            p.service-step__text Процедура проходит аккуратно, с качественной анестезией и под контролем точности
+                        li.service-step
+                            span.service-step__index 4
+                            p.service-step__title Период приживления
+                            p.service-step__text Постоянный контроль и сопровождение лечащего врача в период остеоинтеграции
+                        li.service-step
+                            span.service-step__index 5
+                            p.service-step__title Установка коронки
+                            p.service-step__text Создаём функциональную и эстетичную конструкцию с учётом вашего индивидуального прикуса
+
+
+                .service-price
+                    .service-price__inner
+                        .service-price__info
+                            p.service-price__title Стоимость услуг
+                            ul.service-price__list
+                                li
+                                    p Установка импланта Nobel Biocare (США)
+                                    span 45 000 ₽
+                                li
+                                    p Установка импланта Osstem (Южная Корея)
+                                    span 29 500 ₽
+                                li
+                                    p Временная коронка на импланте (подходит не во всех случаях)
+                                    span 10 000 ₽
+                                li
+                                    p Циркониевая коронка на импланте
+                                    span 42 000 ₽
+                                li
+                                    p Имплант Osstem и циркониевая коронка «под ключ»
+                                    span 71 500 ₽
+                                li
+                                    p Имплант Nobel и циркониевая коронка «под ключ»
+                                    span 87 000 ₽
+                        .service-price-note(style="background-color: #ffe2f4;")
+                            .service-price-note__text
+                                p Итоговая стоимость рассчитывается после диагностики и согласования плана лечения.
+                                p После утверждения плана цена остаётся неизменной — никаких неожиданных доплат в процессе
+                            .service-price-note__img
+                                img(src="./images/castle.webp", alt="")
+                section.page-service-detail__banner-consultation
+                    +bannerConsultation("./images/doctors/doctor7.webp", ["Мухаметзянов Айрат Абуллович", "Врач стоматолог-хирург", "Стаж 31 год"])
+                section.page-service-detail__reviews
+                    .section-title
+                        h5.h2 Отзывы
+                        span.h2 16
+                    .doctor-reviews
+                        .doctor-reviews-slider
+                            .swiper
+                                .swiper-wrapper
+                                    .swiper-slide
+                                        +reviewCard("Анастасия", "5,0", "Очень сильно болел зуб, лечила у Авдошиной Юлии, вылечила качественно и без боли. Она наш семейный зубной врач, очень доброжелательная, страх как рукой снимает. Осмотр всегда проводит очень тщательно, чтобы ничего не упустить.", "ya")
+                                    .swiper-slide
+                                        +reviewCard("Виктория", "5,0", "Очень рекомендую Авдошину Юлию Владимировну! Пришла с острой болью, боялась худшего. Врач все подробно объяснила, успокоила и вылечила зуб максимально бережно и безболезненно. Анестезия подействовала идеально. Впервые вышла из стоматологии с улыбкой. Отдельное спасибо за детальные рекомендации по уходу после лечения. Теперь - только к этому врачу!", "2gis")
+                                    .swiper-slide
+                                        +reviewCard("Анонимно", "5,0", "Сегодня была на приёме у Авдошиной Ю. В. У меня откололся зуб, думала, пойдет под удаление. Но Юлия Владимировна врач от Бога, сохранила мой зуб! Если бы все такими были! Профессионализм, клиентоориентированность и просто доброжелательность - всё это на высшем уровне! Спасибо Вам огромное! ", "")
+                                    .swiper-slide
+                                        +reviewCard("Анастасия", "5,0", "", "ya")
+                            .swiper-button-prev.doctor-reviews-slider-prev
+                                +svg("arrow-slider")
+                            .swiper-button-next.doctor-reviews-slider-next
+                                +svg("arrow-slider")
+                section.page-service-category__map
+                    +map()

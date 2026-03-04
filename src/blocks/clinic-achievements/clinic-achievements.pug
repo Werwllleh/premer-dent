@@ -1,0 +1,108 @@
+mixin clinicAchievements()
+    //- регистрация
+    //- +regLibrary('lib-name/lib.css', 'lib-name/lib.js')
+    //- +regComponent('component-name', true, true)
+    +regLibrary('swiper/swiper-bundle.min.css', 'swiper/swiper-bundle.min.js')
+
+    //clinic-achievements
+    .clinic-achievements&attributes(attributes)
+        .clinic-achievements__swiper-bg
+            .swiper
+                .swiper-wrapper
+                    .swiper-slide
+                        img(src="./images/clinic-achievements/bg.webp").clinic-achievements__swiper-bg__image
+                    .swiper-slide
+                        img(src="./images/clinic-achievements/bg2.webp").clinic-achievements__swiper-bg__image
+                    .swiper-slide
+                        img(src="./images/clinic-achievements/bg3.webp").clinic-achievements__swiper-bg__image
+        .clinic-achievements__swiper-info
+            .swiper
+                .swiper-wrapper
+                    .swiper-slide
+                        .clinic-achievements-slide
+                            .clinic-achievements-slide__body
+                                .clinic-achievements-slide__content
+                                    .clinic-achievements-slide__image
+                                        img(src="./images/clinic-achievements/bg.webp")
+                                    .clinic-achievements-slide__content--info
+                                        p.h3.clinic-achievements-slide__title
+                                            | Компетентность врачей
+                                        p.clinic-achievements-slide__description
+                                            | Специалисты клиники постоянно повышают свою квалификацию, посещая курсы и семинары, что гарантирует высокое качество лечения.
+                                        .clinic-achievements-slide__stars
+                                            +svg('star')
+                                        .clinic-achievements-slide__footer
+                                            .clinic-achievements-slide__navigate
+                                                .clinic-achievements__swiper-info--navigate
+                                                    button(data-navigate="prev").btn.secondary.btn--nav
+                                                        +svg("arrow-left")
+                                                    .clinic-achievements-slide__navigate--index
+                                                        span 1
+                                                        | /
+                                                        span 3
+                                                    button(data-navigate="next").btn.secondary.btn--nav
+                                                        +svg("arrow-right")
+                                            a(href="#").btn.secondary.medium.clinic-achievements-slide__link Подробнее
+                    .swiper-slide
+                        .clinic-achievements-slide
+                            .clinic-achievements-slide__body
+                                .clinic-achievements-slide__content
+                                    .clinic-achievements-slide__image
+                                        img(src="./images/clinic-achievements/bg2.webp")
+                                    .clinic-achievements-slide__content--info
+                                        p.h3.clinic-achievements-slide__title
+                                            | Компетентность врачей
+                                        p.clinic-achievements-slide__description
+                                            | Специалисты клиники постоянно повышают свою квалификацию, посещая курсы и семинары, что гарантирует высокое качество лечения.
+                                        .clinic-achievements-slide__stars
+                                            +svg('star')
+                                            +svg('star')
+                                        .clinic-achievements-slide__footer
+                                            .clinic-achievements-slide__navigate
+                                                .clinic-achievements__swiper-info--navigate
+                                                    button(data-navigate="prev").btn.secondary.btn--nav
+                                                        +svg("arrow-left")
+                                                    .clinic-achievements-slide__navigate--index
+                                                        span 2
+                                                        | /
+                                                        span 3
+                                                    button(data-navigate="next").btn.secondary.btn--nav
+                                                        +svg("arrow-right")
+                                            a(href="#").btn.secondary.medium.clinic-achievements-slide__link Подробнее
+                    .swiper-slide
+                        .clinic-achievements-slide
+                            .clinic-achievements-slide__body
+                                .clinic-achievements-slide__content
+                                    .clinic-achievements-slide__image
+                                        img(src="./images/clinic-achievements/bg3.webp")
+                                    .clinic-achievements-slide__content--info
+                                        p.h3.clinic-achievements-slide__title
+                                            | Компетентность врачей
+                                        p.clinic-achievements-slide__description
+                                            | Специалисты клиники постоянно повышают свою квалификацию, посещая курсы и семинары, что гарантирует высокое качество лечения.
+                                        .clinic-achievements-slide__stars
+                                            +svg('star')
+                                            +svg('star')
+                                            +svg('star')
+                                        .clinic-achievements-slide__footer
+                                            .clinic-achievements-slide__navigate
+                                                .clinic-achievements__swiper-info--navigate
+                                                    button(data-navigate="prev").btn.secondary.btn--nav
+                                                        +svg("arrow-left")
+                                                    .clinic-achievements-slide__navigate--index
+                                                        span 3
+                                                        | /
+                                                        span 3
+                                                    button(data-navigate="next").btn.secondary.btn--nav
+                                                        +svg("arrow-right")
+                                            a(href="#").btn.secondary.medium.clinic-achievements-slide__link Подробнее
+                .swiper__navigate
+                    .clinic-achievements__swiper-info--navigate
+                        button(data-navigate="prev").btn.secondary.btn--nav
+                            +svg("arrow-left")
+                        .clinic-achievements-slide__navigate--index
+                            span.currentIndex 1
+                            | /
+                            span.countSlides
+                        button(data-navigate="next").btn.secondary.btn--nav
+                            +svg("arrow-right")

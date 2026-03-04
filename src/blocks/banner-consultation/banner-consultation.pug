@@ -1,0 +1,25 @@
+mixin bannerConsultation(source, doctorInfo)
+    //- регистрация
+    //- +regLibrary('lib-name/lib.css', 'lib-name/lib.js')
+    //- +regComponent('component-name', true, true)
+    +regComponent('form-consultation', true)
+
+    //banner-consultation
+    .banner-consultation&attributes(attributes)
+        .banner-consultation__body
+            .banner-consultation__left
+                .banner-consultation__form
+                    +formConsultation()
+            .banner-consultation__right
+                .banner-consultation__image
+                    if source
+                        img(src=source, alt="")
+                    else
+                        img(src="./images/doc.png", alt="")
+                .banner-consultation__vector
+                    +svg("vector-banner-consultation")
+        if doctorInfo && doctorInfo.length
+            .banner-consultation-doctor
+                p.banner-consultation-doctor__name= doctorInfo[0]
+                p.banner-consultation-doctor__position= doctorInfo[1]
+                span.banner-consultation-doctor__experience= doctorInfo[2]

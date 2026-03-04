@@ -1,0 +1,73 @@
+mixin search()
+    //- регистрация
+    //- +regLibrary('lib-name/lib.css', 'lib-name/lib.js')
+    //- +regComponent('component-name', true, true)
+
+    //search
+    .search&attributes(attributes)
+        .search__window
+            .search__body
+                .search__field
+                    span.search__field--icon-search
+                        +svg("search")
+                    input(placeholder="Поиск по сайту").search__field--input
+                    button.search__field--clear-button
+                        +svg("close")
+                    button.search__close
+                        +svg("close")
+                .search__result
+                    .search__result--error
+                        span
+                            +svg("search")
+                        p Ничего не найдено, попробуйте изменить ваш запрос
+                    .search__result--content
+                        .search__result--group
+                            p.search__result--category Услуги
+                            ul.search__result--list
+                                li
+                                    img(src="./images/search/1.jpg")
+                                    p Лечение и эстетика
+                                    a(href="#")
+                                li
+                                    img(src="./images/search/1.jpg")
+                                    p Хирургия
+                                    a(href="#")
+                                li
+                                    img(src="./images/search/1.jpg")
+                                    p Имплантация
+                                    a(href="#")
+                                li
+                                    img(src="./images/search/1.jpg")
+                                    p Протезирование
+                                    a(href="#")
+                                li
+                                    img(src="./images/search/1.jpg")
+                                    p Пародонтология
+                                    a(href="#")
+                                li
+                                    img(src="./images/search/1.jpg")
+                                    p Детская стоматология
+                                    a(href="#")
+                                li
+                                    img(src="./images/search/1.jpg")
+                                    p Диагностика
+                                    a(href="#")
+                        .search__result--group
+                            p.search__result--category Врачи
+                            ul.search__result--list
+                                li
+                                    img(src="./images/search/2.jpg")
+                                    p Галина Александровна Аксенова
+                                    a(href="#")
+                                li
+                                    img(src="./images/search/2.jpg")
+                                    p Ульяна Геннадьевна Широкова-Пиманова
+                                    a(href="#")
+                                li
+                                    img(src="./images/search/2.jpg")
+                                    p Врач врач врач
+                                    a(href="#")
+                                li
+                                    img(src="./images/search/2.jpg")
+                                    p Врач врач врач
+                                    a(href="#")

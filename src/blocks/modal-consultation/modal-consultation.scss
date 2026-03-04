@@ -1,0 +1,175 @@
+@use '../../app/scss/variables.scss' as *;
+@use '../../app/scss/mixins' as *;
+
+// modal-consultation
+.modal-consultation {
+
+  &__body {}
+
+  &__top {
+    padding-bottom: 20px;
+
+    @include mobile {
+      padding-bottom: 60px;
+    }
+
+    @include tablet {
+      padding-bottom: 90px;
+    }
+  }
+
+  &__form {
+
+    .form-consultation {
+
+      &__body {
+        display: flex;
+
+        @include desktop {
+          flex-direction: row;
+          align-items: flex-start;
+          justify-content: space-between;
+          gap: 20px;
+        }
+      }
+
+      &__top {
+
+        @include desktop {
+          max-width: 400px;
+        }
+      }
+
+      &__title {
+
+        @include desktop {
+          font-size: 32px;
+        }
+      }
+
+      &__description {
+
+      }
+
+      &__bottom {
+
+        @include desktop {
+          width: 100%;
+          max-width: 420px;
+        }
+      }
+    }
+  }
+
+  &__bottom {
+    position: relative;
+    padding-top: 20px;
+
+    @include tablet {
+      padding-top: 48px;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      width: 100vw;
+      height: 1px;
+      background-color: rgba(0, 0, 0, 0.1);
+      margin-left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  &__contacts {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+
+    &--description {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 1.4;
+      color: $text;
+    }
+
+    &--list {
+      display: flex;
+      align-items: stretch;
+      gap: 8px;
+      flex-wrap: wrap;
+
+      @include desktop {
+        flex-wrap: nowrap;
+      }
+
+      li {
+
+        a {
+          height: 52px;
+
+          .text {
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 1.5;
+            color: $text;
+            white-space: nowrap;
+          }
+
+          &.whatsapp {
+            .icon {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+
+              svg {
+                width: 20px;
+                height: 20px;
+              }
+            }
+          }
+
+          &.telegram {
+            .icon {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+
+              svg {
+                width: 18px;
+                height: 15px;
+              }
+            }
+          }
+
+          &.whatsapp,
+          &.telegram {
+
+            @media (max-width: 992px) {
+              padding: 16px;
+            }
+
+            .text {
+              display: none;
+
+              @include semiDesktop {
+                display: block;
+              }
+            }
+
+            .icon {
+              display: block;
+
+              @include semiDesktop {
+                display: none;
+              }
+            }
+
+          }
+        }
+      }
+    }
+  }
+}

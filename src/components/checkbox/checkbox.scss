@@ -1,0 +1,73 @@
+@use '../../app/scss/variables.scss' as *;
+
+// checkbox
+.checkbox {
+  position: relative;
+  display: inline-flex;
+  max-width: max-content;
+
+  &__input {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+  }
+
+  &__label {
+    position: relative;
+    padding-left: 24px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.4;
+    color: $text;
+    cursor: pointer;
+    user-select: none;
+    transition: color $transition-default;
+
+    a {
+      color: inherit;
+      text-decoration: underline;
+      text-decoration-skip-ink: none;
+
+      &:hover {
+        color: $primary;
+      }
+    }
+
+    &::before {
+      position: absolute;
+      left: 0;
+      top: 1px;
+      width: 16px;
+      height: 16px;
+      border-radius: 4px;
+      display: block;
+      background-color: #fff;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 14 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11.401 2.9996L12.9861 4.58475L5.57126 11.9996L1 7.42844L2.58509 5.8433L5.57126 8.82937L11.401 2.9996Z' fill='white'/%3E%3C/svg%3E");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 12px 12px;
+      border: 1px solid $border;
+      content: "";
+      transition: border-color $transition-default, background-color $transition-default;
+    }
+
+    &:hover {
+      color: $text;
+
+      &::before {
+        border-color: $primary;
+      }
+    }
+
+    .checkbox__input:checked+&,
+    .checkbox__input:checked+&:hover {
+      &::before {
+        background-color: $primary;
+        border-color: $primary;
+        color: $text;
+      }
+
+      color: $text;
+    }
+  }
+}

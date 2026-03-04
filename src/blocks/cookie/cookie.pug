@@ -1,0 +1,19 @@
+mixin cookie()
+    //- регистрация
+    //- +regLibrary('lib-name/lib.css', 'lib-name/lib.js')
+    //- +regComponent('component-name', true, true)
+
+    //cookie
+    .cookie&attributes(attributes)
+      .cookie__body
+        p.cookie__description
+          | На нашем сайте используются файлы cookies, которые делают его более удобным для каждого пользователя. Посещая страницы сайта, вы даете
+          |
+          a(href="#") согласие на обработку персональных данных
+          |
+          | в соответствии с
+          |
+          a(href="#") Политикой.
+          |
+          | Cookie можно отключить в любой момент в настройках вашего браузера.
+        button.btn.small.primary.cookie__button Принять

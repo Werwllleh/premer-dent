@@ -1,0 +1,76 @@
+include ../../pug/index
+include ../../../components/index
+include ../../../blocks/index
+
+block vars
+    - var stylesLibs = []
+    - var scriptsLibs = []
+    - var stylesComponents = []
+    - var scriptsComponents = []
+    - var stylesBlocks = []
+    - var scriptsBlocks = []
+    - var stylePage = ''
+    - var scriptPage = ''
+
+    - var title = "Document"
+    - var description = "Document description"
+
+block use
+
+doctype html
+html(lang="ru")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        base(href="./")
+        title= title
+        meta(name="description" content="" + description)
+        link(rel="stylesheet", href=`libs/lightgallery/lightgallery-bundle.min.css`)
+    body
+        +regBlock('header', true, true)
+        +header().fixed
+        main.page
+            .page__container.container
+                .page__content
+                    block content
+        +regBlock('footer', true, true)
+        +footer()
+
+        .styles-to-head-transfer
+            // Стили библиотек
+            each style in stylesLibs
+                link(rel="stylesheet", href=`libs/${style}`)
+            // Стили общие
+            link(rel="stylesheet", href=`css/common.css`)
+            // Стили компонентов
+            each style in stylesComponents
+                link(rel="stylesheet", href=`css/components/${style}.css`)
+            // Стили блоков
+            each style in stylesBlocks
+                link(rel="stylesheet", href=`css/blocks/${style}.css`)
+            // Стили страницы
+            if stylePage.length
+                link(rel="stylesheet", href=`css/pages/${stylePage}.css`)
+
+        // Скрипты библиотек
+        script(src=`libs/tippy/popper.min.js`)
+        script(src=`libs/tippy/tippy-bundle.umd.min.js`)
+        script(src=`libs/lightgallery/lightgallery.min.js`)
+        script(src=`libs/lightgallery/plugins/lg-zoom.min.js`)
+        script(src=`libs/lightgallery/plugins/lg-rotate.min.js`)
+        script(src=`libs/lightgallery/plugins/lg-fullscreen.min.js`)
+        script(src=`https://api-maps.yandex.ru/v3/?apikey=07d9285b-8395-4497-9596-7adf46a6bdea&lang=ru_RU`)
+        each script in scriptsLibs
+            script(src=`libs/${script}`)
+        // Скрипты общие
+        script(src=`js/common.js`)
+        // Скрипты компонентов
+        each script in scriptsComponents
+            script(src=`js/components/${script}.js`)
+        // Скрипты блоков
+        each script in scriptsBlocks
+            script(src=`js/blocks/${script}.js`)
+        // Скрипты страницы
+        if scriptPage.length
+           script(src=`js/pages/${scriptPage}.js`)
+        include ../../../sprite/sprite.svg

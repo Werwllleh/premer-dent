@@ -1,0 +1,37 @@
+extends ../../app/pug/layouts/base-main
+
+append vars
+  - title = "Разводящая страница"
+  - description = ""
+
+append content
+    +regPage('index', true, true)
+    //- регистрация
+    //- +regLib('lib-name/lib.js', 'lib-name/lib.css')
+
+
+    main.page.page-index
+        .page__container.container
+            .page__content
+                h1.h1 Список страниц
+                ul.page-index__list
+                    li
+                        a(href="./ui.html", target="_blank") UI
+                    li
+                        a(href="./main.html", target="_blank") Главная
+                    li
+                        a(href="./price.html", target="_blank") Цены
+                    li
+                        a(href="./doctors.html", target="_blank") Доктора
+                    li
+                        a(href="./doctor-detail.html", target="_blank") Доктор детальная
+                    li
+                        a(href="./doctor-detail2.html", target="_blank") Доктор детальная (видео)
+                    li
+                        a(href="./services.html", target="_blank") Услуги
+                    li
+                        a(href="./service-category.html", target="_blank") Категория услуг
+                    li
+                        a(href="./service-detail.html", target="_blank") Услуга детальная
+                    li
+                        a(href="./banner-consultation-variants.html", target="_blank") Варианты баннеров

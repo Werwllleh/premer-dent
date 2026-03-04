@@ -1,0 +1,19 @@
+mixin doctorCard(experience, name, position, photo)
+    //- регистрация
+    //- +regLibrary('lib-name/lib.css', 'lib-name/lib.js')
+    //- +regComponent('component-name', true, true)
+
+    //doctor-card
+    .doctor-card&attributes(attributes)
+        .doctor-card__body
+            .doctor-card__photo
+                if photo
+                    img(src=`./images/doctors/${photo}.webp`)
+                else
+                    img(src=`./images/doctors/no-doctor-photo.webp`)
+            .doctor-card__footer
+                span.doctor-card__exp= experience
+                .doctor-card__info
+                    p.doctor-card__name= name
+                    p.doctor-card__position= position
+        a(href="./doctor-detail.html").doctor-card__link

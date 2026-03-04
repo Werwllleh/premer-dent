@@ -1,0 +1,32 @@
+extends ../../app/pug/layouts/base-main
+
+append vars
+  - title = "Главная"
+  - description = ""
+
+append content
+    +regPage('main', true, true)
+    +regBlock('main-block', true, true)
+    +regBlock('clinic-services', true)
+    +regBlock('clinic-about', true)
+    +regBlock('banner-consultation', true, true)
+    +regBlock('clinic-achievements', true, true)
+    +regBlock('map', true, true)
+    //- регистрация
+    //- +regLibrary('lib-name/lib.css', 'lib-name/lib.js')
+    //- +regBlock('block-name', true, true)
+
+    .page-main
+        section.page-main__main
+            +mainBlock()
+        section.page-main__clinic-services
+            +clinicServices("Услуги клиники")
+        section.page-main__clinic-about
+            +clinicAbout("О нас")
+        section.page-main__clinic-achievements
+            p.h2 Почему нам доверяют
+            +clinicAchievements()
+        section.page-main__banner-consultation
+            +bannerConsultation()
+        section.page-main__map
+            +map()

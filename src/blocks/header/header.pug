@@ -1,0 +1,261 @@
+mixin header(darkTheme)
+    //- регистрация
+    //- +regLibrary('lib-name/lib.css', 'lib-name/lib.js')
+    //- +regComponent('component-name', true, true)
+    +regComponent('search', true, true)
+
+    //header
+    header.header(class=`${darkTheme ? 'dark' : ''}`)&attributes(attributes)
+        .header__main
+            .header__container.container
+                .header__body
+                    .header__top
+                        a(href="https://yandex.ru/maps/195/ulyanovsk/?ll=48.389410%2C54.311642&mode=poi&poi%5Bpoint%5D=48.388909%2C54.311624&poi%5Buri%5D=ymapsbm1%3A%2F%2Forg%3Foid%3D1125366534&utm_campaign=desktop&utm_medium=search&utm_source=maps&z=18.55", target="_blank", rel="noopener noreferrer").header__address Ульяновск, ул. Льва Толстого, 38
+                        .header__contacts
+                            a(href="tel:+78422416426") +7 (8422) 41-64-26
+                            a(href="#") WhatsApp
+                            a(href="#") Telegram
+                    .header__bottom
+                        a(href="#").header__logo
+                            if !darkTheme
+                                +svg("logo")
+                            else
+                                +svg("logo-dark")
+                            img(src="./images/logo.png", alt="Логотип Премьер Дент")
+                        nav.header__nav
+                            a(href="#", data-nav="services").header__nav--item
+                                | Услуги
+                                |
+                                +svg("arrow-down")
+                            a(href="#").header__nav--item Акции
+                            a(href="#").header__nav--item Цены
+                            a(href="#").header__nav--item Врачи
+                            a(href="#", data-nav="patients").header__nav--item
+                                | Пациентам
+                                |
+                                +svg("arrow-down")
+                            a(href="#").header__nav--item Контакты
+                        .header__actions
+                            button.btn.header__search--button
+                                +svg("search")
+                            button(data-modal="consultation").btn.primary.small.header__registration--button Записаться на консультацию
+                            button.header-burger-button
+                                +svg("burger").header-burger-button__burger
+                                +svg("close").header-burger-button__close
+
+        .header-menu
+            .header-menu__container.container
+                .header-menu__body
+                    .header-menu__mobile
+                        .header-menu__nav
+                            ul.header-menu__nav--links
+                                li
+                                    a(href="#", data-nav="services").header-menu__nav--link
+                                        | Услуги
+                                        +svg("arrow-right")
+                                li
+                                    a(href="#").header-menu__nav--link Акции
+                                li
+                                    a(href="#").header-menu__nav--link Цены
+                                li
+                                    a(href="#").header-menu__nav--link Врачи
+                                li
+                                    a(href="#", data-nav="patients").header-menu__nav--link
+                                        | Пациентам
+                                        +svg("arrow-right")
+                                li
+                                    a(href="#").header-menu__nav--link Контакты
+                        .menu-subnavs
+                            .menu-subnavs__category(data-category="services")
+                                button.menu-subnavs__back-button
+                                    +svg("arrow-left")
+                                    | Услуги
+                                .menu-subnav__list
+                                    .menu-subnav
+                                        a(href="#").menu-subnav__link
+                                            | Лечение и эстетика
+                                            +svg("arrow-down")
+                                        .menu-subnav__items
+                                            ul
+                                                li
+                                                    a(href="#") Лечение кариеса
+                                                li
+                                                    a(href="#") Гигиена и профилактика
+                                                li
+                                                    a(href="#") Лечение пульпита
+                                                li
+                                                    a(href="#") Лечение периодонтита
+                                                li
+                                                    a(href="#") Отбеливание зубов
+                                                li
+                                                    a(href="#") Реставрация зубов
+                                    .menu-subnav
+                                        a(href="#").menu-subnav__link
+                                            | Хирургия
+                                            +svg("arrow-down")
+                                        .menu-subnav__items
+                                            ul
+                                                li
+                                                    a(href="#") Удаление зубов
+                                                li
+                                                    a(href="#") Синус лифтинг и костная пластика
+                                    .menu-subnav
+                                        a(href="#").menu-subnav__link
+                                            | Имплантация
+                                            +svg("arrow-down")
+                                        .menu-subnav__items
+                                            ul
+                                                li
+                                                    a(href="#") Удаление зубов
+                                                li
+                                                    a(href="#") Синус лифтинг и костная пластика
+                                    .menu-subnav
+                                        a(href="#").menu-subnav__link
+                                            | Протезирование
+                                            +svg("arrow-down")
+                                        .menu-subnav__items
+                                            ul
+                                                li
+                                                    a(href="#") Удаление зубов
+                                                li
+                                                    a(href="#") Синус лифтинг и костная пластика
+                                    .menu-subnav
+                                        a(href="#").menu-subnav__link Пародонтология
+                                    .menu-subnav
+                                        a(href="#").menu-subnav__link Детская стоматология
+                                    .menu-subnav
+                                        a(href="#").menu-subnav__link Диагностика
+                            .menu-subnavs__category(data-category="patients")
+                                button.menu-subnavs__back-button
+                                    +svg("arrow-left")
+                                    | Пациентам
+                                .menu-subnav__list
+                                    .menu-subnav
+                                        a(href="#").menu-subnav__link О нас
+                                    .menu-subnav
+                                        a(href="#").menu-subnav__link Статьи
+                                    .menu-subnav
+                                        a(href="#").menu-subnav__link Отзывы
+                                    .menu-subnav
+                                        a(href="#").menu-subnav__link Документы
+                                    .menu-subnav
+                                        a(href="#").menu-subnav__link ДМС
+                                    .menu-subnav
+                                        a(href="#").menu-subnav__link Обратная связь
+
+                    .header-menu__desktop
+                        .header-menu__content
+                            .header-menu-category(data-category="services").active
+                                .header-menu-category__body
+                                    nav.header-menu-category__categories
+                                        a(href="#", data-category-item="treatment-aesthetics").header-menu-category__link
+                                            | Лечение и эстетика
+                                            +svg('arrow-right')
+                                        a(href="#", data-category-item="surgery").header-menu-category__link
+                                            | Хирургия
+                                            +svg('arrow-right')
+                                        a(href="#", data-category-item="implantation").header-menu-category__link
+                                            | Имплантация
+                                            +svg('arrow-right')
+                                        a(href="#", data-category-item="prosthetics").header-menu-category__link
+                                            | Протезирование
+                                            +svg('arrow-right')
+                                        a(href="#").header-menu-category__link Пародонтология
+                                        a(href="#").header-menu-category__link Детская стоматология
+                                        a(href="#").header-menu-category__link Диагностика
+                                        a(href="#").header-menu-category__link Все услуги
+                                    .header-menu-category__content(data-category-content="treatment-aesthetics")
+                                        .header-menu-category__content--list
+                                            p Лечение и эстетика
+                                            ul
+                                                li
+                                                    a(href="#") Лечение кариеса
+                                                li
+                                                    a(href="#") Гигиена и профилактика
+                                                li
+                                                    a(href="#") Лечение пульпита
+                                                li
+                                                    a(href="#") Лечение периодонтита
+                                                li
+                                                    a(href="#") Отбеливание зубов
+                                                li
+                                                    a(href="#") Реставрация зубов
+                                        .header-menu-category__content--ad
+                                            .menu-ad.type1
+                                                .menu-ad__body
+                                                img(src="./images/menu/1.jpg").menu-ad__img
+                                    .header-menu-category__content(data-category-content="surgery")
+                                        .header-menu-category__content--list
+                                            p Хирургия
+                                            ul
+                                                li
+                                                    a(href="#") Удаление зубов
+                                                li
+                                                    a(href="#") Синус лифтинг и костная пластика
+                                        .header-menu-category__content--ad
+                                            .menu-ad.type2
+                                                .menu-ad__body
+                                                    p.menu-ad__title Скидка 15% на седацию до&nbsp;31 октября 2025 года
+                                                    a(href="#").btn.primary.small.menu-ad__link Подробнее
+                                                img(src="./images/menu/2.jpg").menu-ad__img
+                                    .header-menu-category__content(data-category-content="implantation")
+                                        .header-menu-category__content--list
+                                            p Имплантация
+                                            ul
+                                                li
+                                                    a(href="#") Имплантация с немедленной нагрузкой
+                                                li
+                                                    a(href="#") Имплантация с отсроченной нагрузкой
+                                        .header-menu-category__content--ad
+                                            .menu-ad.type3
+                                                .menu-ad__body
+                                                    p.menu-ad__title Скидка 15% на седацию до&nbsp;31 октября 2025 года
+                                                    a(href="#").btn.primary.small.menu-ad__link Подробнее
+                                                img(src="./images/menu/1.jpg").menu-ad__img
+                                    .header-menu-category__content(data-category-content="prosthetics")
+                                        .header-menu-category__content--list
+                                            p Протезирование
+                                            ul
+                                                li
+                                                    a(href="#") Коронки из диоксида циркония
+                                                li
+                                                    a(href="#") Металлокерамические коронки и мостовидные протезы
+                                                li
+                                                    a(href="#") Съемные протезы
+                                                li
+                                                    a(href="#") Протезирование all-on-4/6/8
+                                        .header-menu-category__content--ad
+                                            .menu-ad.type1
+                                                .menu-ad__body
+                                                img(src="./images/menu/1.jpg").menu-ad__img
+                            .header-menu-category(data-category="patients")
+                                .header-menu-category__body
+                                    nav.header-menu-category__categories
+                                        a(href="#").header-menu-category__link О нас
+                                        a(href="#").header-menu-category__link Статьи
+                                        a(href="#").header-menu-category__link Отзывы
+                                        a(href="#").header-menu-category__link Документы
+                                        a(href="#").header-menu-category__link ДМС
+                                        a(href="#").header-menu-category__link Обратная связь
+                                    .header-menu-category__content
+                                        .header-menu-category__content--list
+                                        .header-menu-category__content--ad
+                                            .menu-ad.type1
+                                                .menu-ad__body
+                                                img(src="./images/menu/1.jpg").menu-ad__img
+                    .header-menu__footer
+                        .header-menu__footer--contacts
+                            a(href="tel:+78422416426").phone +7 (8422) 41-64-26
+                            a(href="https://yandex.ru/maps/195/ulyanovsk/?ll=48.389410%2C54.311642&mode=poi&poi%5Bpoint%5D=48.388909%2C54.311624&poi%5Buri%5D=ymapsbm1%3A%2F%2Forg%3Foid%3D1125366534&utm_campaign=desktop&utm_medium=search&utm_source=maps&z=18.55", target="_blank", rel="noreferrer noopener").address Ульяновск, ул. Льва Толстого, 38
+                        button(data-modal="consultation").btn.primary.medium.header-menu__footer--registration Записаться на консультацию
+                        ul.socials-list.header-menu__footer--socials
+                            li
+                                a(href="#", target="_blank" rel="noopener noreferrer").btn.secondary.vk
+                                    +svg('vk')
+                            li
+                                a(href="#", target="_blank" rel="noopener noreferrer").btn.secondary.telegram
+                                    +svg('telegram')
+                            li
+                                a(href="#", target="_blank" rel="noopener noreferrer").btn.secondary.whatsapp
+                                    +svg('whatsapp')
+    +search()

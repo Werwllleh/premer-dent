@@ -1,0 +1,14 @@
+mixin videoCard(poster)
+    //- регистрация
+    //- +regLibrary('lib-name/lib.css', 'lib-name/lib.js')
+    //- +regComponent('component-name', true, true)
+
+    //video-card
+    .video-card&attributes(attributes)
+        button(type="button").btn.light.play-video-button
+            +svg("play")
+        .video-card__poster
+            img(src=poster, alt="")
+        video()
+            source(src="./video.mp4" type="video/mp4")
+            | Ваш браузер не поддерживает встроенные видео :(

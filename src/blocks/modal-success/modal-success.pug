@@ -1,0 +1,15 @@
+mixin modalSuccess()
+    //- регистрация
+    //- +regLibrary('lib-name/lib.css', 'lib-name/lib.js')
+    //- +regComponent('component-name', true, true)
+
+    //modal-success
+    .modal-success__inner&attributes(attributes)
+        .modal-success__body
+            p.h3.modal-success__title Спасибо
+            p.modal-success__description
+                |Ваша заявка отправлена.
+                br
+                |Мы свяжемся с вами в ближайшее время
+            button.btn.primary.medium.modal__close.modal-success__close-button Закрыть
+

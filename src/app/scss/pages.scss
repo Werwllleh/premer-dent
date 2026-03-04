@@ -1,0 +1,2641 @@
+@use '../../app/scss/variables.scss' as *;
+@use '../../app/scss/mixins.scss' as *;
+
+.swiper-button-prev,
+.swiper-button-next {
+  z-index: 1;
+}
+
+.page-general {
+  padding-top: 12px;
+
+  &__breadcrumbs {
+  }
+
+  &__header {
+    margin-top: 10px;
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 1.1;
+    color: $text;
+
+    @include tablet {
+      font-size: 48px;
+    }
+  }
+
+  &__content {
+    margin-top: 24px;
+
+    @include tablet {
+      margin-top: 40px;
+    }
+  }
+
+}
+
+.price {
+
+  .price__body {
+    display: grid;
+    grid-template-columns: 100%;
+    gap: 40px 0;
+
+    @include semiDesktop {
+      grid-template-columns: 350px calc(100% - 350px);
+      gap: 20px;
+    }
+
+    @include w1250 {
+      grid-template-columns: 420px calc(100% - 420px);
+    }
+  }
+
+  .price__left {
+  }
+
+  .price__left--actions {
+    position: sticky;
+    top: 150px;
+  }
+
+  .price__right {
+  }
+
+  .price__services {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    overflow-x: auto;
+    margin-inline: -16px;
+    padding-inline: 16px;
+    padding-bottom: 10px;
+
+    @include semiDesktop {
+      flex-wrap: wrap;
+      overflow-x: hidden;
+      padding-bottom: 0;
+    }
+  }
+
+  .price__services--item {
+    border: 1px solid $border;
+    color: $text;
+  }
+
+  .price__button-download {
+    gap: 9px;
+
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+  .price__services + .price__button-download {
+    margin-top: 40px;
+    display: none;
+
+    @include semiDesktop {
+      display: flex;
+    }
+  }
+
+  .price__right .price__button-download {
+    margin: 40px auto 0;
+
+    @include semiDesktop {
+      display: none;
+    }
+  }
+
+  .price__list {
+    margin-inline: -16px;
+
+    @include mobile {
+      margin-inline: 0;
+    }
+
+    & > {
+      li + li {
+        margin-top: 12px;
+      }
+    }
+
+  }
+
+  .price__service {
+    border-radius: 24px;
+    padding-block: 16px;
+    padding-inline: 16px;
+    box-shadow: 0 2px 36px 0 rgba(38, 38, 51, 0.08), 0 1px 4px 1px rgba(38, 38, 51, 0.02);
+    background: $bg-white;
+
+    @include semiDesktop {
+      padding-block: 32px 16px;
+      padding-inline: 32px;
+    }
+
+    .price__service--body {
+      display: flex;
+      flex-direction: column;
+      gap: 20px 0;
+    }
+
+    .price__service--top {
+      display: flex;
+      flex-direction: column;
+      gap: 16px 0;
+
+      @include mobile {
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 0 25px;
+      }
+
+      p {
+        font-weight: 600;
+        font-size: 26px;
+        line-height: 1.1;
+        color: $text;
+      }
+
+      img {
+        border-radius: 12px;
+        width: 100%;
+        height: auto;
+
+        @include mobile {
+          max-width: 225px;
+        }
+      }
+    }
+
+    .price__service--middle {
+    }
+
+    .price__service--bottom {
+    }
+
+    .price__service--list {
+      li {
+        padding-block: 16px;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 0 25px;
+
+        p {
+          font-weight: 400;
+          font-size: 17px;
+          line-height: 1.4;
+          color: $text;
+        }
+
+        span {
+          font-weight: 400;
+          font-size: 17px;
+          line-height: 1.4;
+          text-align: right;
+          color: $text !important;
+          white-space: nowrap;
+          text-decoration: none !important;
+        }
+
+        &:not(:last-child) {
+          border-bottom: 1px solid $border-secondary;
+        }
+      }
+    }
+
+    .price__service--banner {
+      position: relative;
+      overflow: hidden;
+      padding: 16px 12px;
+      border-radius: 16px;
+      margin-inline: -8px;
+
+      @include mobile {
+        padding: 24px;
+      }
+
+      &.dark {
+
+        p {
+          color: $text;
+        }
+      }
+
+      p {
+        position: relative;
+        z-index: 1;
+        font-weight: 600;
+        font-size: 17px;
+        line-height: 1.1;
+        color: $text-light;
+        max-width: 250px;
+
+        @include semiDesktop {
+          font-size: 20px;
+          max-width: 50%;
+        }
+      }
+
+      img {
+        position: absolute;
+        top: 0;
+        right: -5%;
+        bottom: 0;
+        max-width: 160px;
+        object-fit: cover;
+        object-position: left top;
+        width: 100%;
+        height: 100%;
+
+        @include mobile {
+          right: -10%;
+          max-width: 220px;
+        }
+
+        @include semiDesktop {
+          right: 25px;
+          max-width: 315px;
+          object-position: center top;
+        }
+      }
+    }
+  }
+
+  .price__banner-consultation {
+    margin-top: 120px;
+
+    @include mobile {
+      margin-top: 140px;
+    }
+  }
+
+  .price__map {
+    margin-top: 80px;
+
+    @include mobile {
+      margin-top: 180px;
+    }
+  }
+
+}
+
+.doctor-services {
+
+  ul {
+    display: flex;
+    flex-direction: column;
+
+    li {
+      padding: 16px 0;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 0 15px;
+
+      @include tablet {
+        gap: 0 30px;
+      }
+
+      span {
+        font-weight: 400;
+        font-size: 17px;
+        line-height: 1.4;
+        text-align: right;
+        color: $text;
+        white-space: nowrap;
+      }
+
+      p {
+        font-weight: 400;
+        font-size: 17px;
+        line-height: 1.4;
+        color: $text;
+      }
+
+      &:not(:last-child) {
+        border-bottom: 1px solid $border-secondary;
+      }
+    }
+  }
+}
+
+.doctor-works {
+}
+
+.doctor-works-slider {
+  position: relative;
+
+  .swiper {
+    overflow: unset;
+
+    .swiper-wrapper {
+      align-items: stretch;
+
+      .swiper-slide {
+        border-radius: 12px;
+        box-shadow: inset 0 0 0 1px rgba(38, 38, 51, 0.08);
+        background: $text-light;
+        overflow: hidden;
+        max-height: 367px;
+        height: auto;
+        width: 250px;
+
+        @include mobile {
+          max-height: 440px;
+          width: 300px;
+        }
+      }
+    }
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    width: 48px;
+    height: 48px;
+    box-shadow: 0 4px 20px 0 rgba(38, 38, 51, 0.12);
+    background: $bg-white;
+    transition: transform $transition-default, opacity $transition-default, visibility $transition-default;
+
+    @include tablet {
+      display: flex;
+    }
+
+    &:hover {
+      transform: scale(1.025);
+    }
+
+    svg {
+      width: 16px;
+      height: 16px;
+      color: $text;
+    }
+
+    &.swiper-button-disabled {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+
+  .swiper-button-prev {
+    left: -35px;
+
+    svg {
+      transform: rotate(180deg);
+    }
+  }
+
+  .swiper-button-next {
+    right: -35px;
+  }
+
+
+  &__photo {
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+.doctor-publications {
+
+}
+
+.doctor-publications-slider {
+  position: relative;
+
+  .swiper {
+    overflow: unset;
+
+    .swiper-wrapper {
+      align-items: stretch;
+
+      .swiper-slide {
+        background: $text-light;
+        overflow: hidden;
+        min-height: 367px;
+        width: 250px;
+        height: auto;
+        box-shadow: inset 0 0 0 1px rgba(38, 38, 51, 0.08);
+        background: $text-light;
+        border-radius: 12px;
+
+        @include mobile {
+          min-height: 440px;
+          width: 300px;
+        }
+
+        .doctor-publication-card {
+          height: 100%;
+        }
+      }
+    }
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    width: 48px;
+    height: 48px;
+    box-shadow: 0 4px 20px 0 rgba(38, 38, 51, 0.12);
+    background: $bg-white;
+    transition: transform $transition-default, opacity $transition-default, visibility $transition-default;
+
+    @include tablet {
+      display: flex;
+    }
+
+    &:hover {
+      transform: scale(1.025);
+    }
+
+    svg {
+      width: 16px;
+      height: 16px;
+      color: $text;
+    }
+
+    &.swiper-button-disabled {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+
+  .swiper-button-prev {
+    left: -15px;
+
+    @include w1250 {
+      left: -35px;
+    }
+
+    svg {
+      transform: rotate(180deg);
+    }
+  }
+
+  .swiper-button-next {
+    right: -15px;
+
+    @include w1250 {
+      right: -35px;
+    }
+  }
+}
+
+.doctor-reviews {
+}
+
+.doctor-reviews-slider {
+  position: relative;
+
+  .swiper {
+    overflow: unset;
+
+    .swiper-wrapper {
+      align-items: stretch;
+
+      .swiper-slide {
+        width: 250px;
+        height: auto;
+        min-height: 440px;
+
+        @include mobile {
+          width: 300px;
+        }
+
+        @include desktop {
+          width: 324px;
+        }
+
+        .review-card {
+
+          height: 100%;
+        }
+      }
+    }
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    width: 48px;
+    height: 48px;
+    box-shadow: 0 4px 20px 0 rgba(38, 38, 51, 0.12);
+    background: $bg-white;
+    transition: transform $transition-default, opacity $transition-default, visibility $transition-default;
+
+    @include tablet {
+      display: flex;
+    }
+
+    &:hover {
+      transform: scale(1.025);
+    }
+
+    svg {
+      width: 16px;
+      height: 16px;
+      color: $text;
+    }
+
+    &.swiper-button-disabled {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+
+  .swiper-button-prev {
+    left: -15px;
+
+    @include w1250 {
+      left: -35px;
+    }
+
+    svg {
+      transform: rotate(180deg);
+    }
+  }
+
+  .swiper-button-next {
+    right: -15px;
+
+    @include w1250 {
+      right: -35px;
+    }
+  }
+}
+
+.doctor-education {
+  padding-bottom: 10px;
+
+  @include mobile {
+    padding-bottom: 20px;
+  }
+
+  h5 + &__list {
+    margin-top: 24px;
+  }
+
+  &__list {
+    display: flex;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 20px;
+
+  }
+
+  &__item {
+    flex: 0 1 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    @include mobile {
+      flex-direction: row;
+      align-items: stretch;
+    }
+
+    @include semiDesktop {
+      flex: 0 1 calc((100% - 20px) / 2);
+    }
+
+    &--icon {
+      flex: 0 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: $c100;
+      border-radius: 12px;
+      width: 64px;
+      height: 64px;
+
+      @include mobile {
+        width: 88px;
+        height: 88px;
+      }
+
+      svg {
+        width: 30px;
+        height: 27px;
+        color: $c400;
+
+        @include mobile {
+          width: 44px;
+          height: 40px;
+        }
+      }
+    }
+
+    &--info {
+      display: flex;
+      flex-direction: column;
+      max-width: 450px;
+    }
+
+    &--title {
+      font-weight: 500;
+      font-size: 17px;
+      line-height: 1.4;
+      color: $text;
+    }
+
+    &--text {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 1.4;
+      color: $text;
+    }
+
+    &--year {
+      margin-top: 4px;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 1.4;
+      color: $text-secondary;
+    }
+  }
+}
+
+.doctor-certificates {
+  padding-top: 12px;
+
+  @include mobile {
+    padding-top: 20px;
+  }
+
+  h5 + .doctor-certificates-slider {
+    margin-top: 24px;
+  }
+}
+
+.doctor-certificates-slider {
+  position: relative;
+
+  .swiper {
+    overflow: unset;
+
+    .swiper-wrapper {
+      align-items: stretch;
+
+      .swiper-slide {
+        width: auto;
+        height: auto;
+
+        a {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 250px;
+          height: 183px;
+          border-radius: 12px;
+          box-shadow: inset 0 0 0 1px rgba(38, 38, 51, 0.08);
+          background: $text-light;
+          overflow: hidden;
+
+          @include mobile {
+            width: 300px;
+            height: 220px;
+          }
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+          }
+        }
+      }
+    }
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    width: 48px;
+    height: 48px;
+    box-shadow: 0 4px 20px 0 rgba(38, 38, 51, 0.12);
+    background: $bg-white;
+    transition: transform $transition-default, opacity $transition-default, visibility $transition-default;
+
+    @include tablet {
+      display: flex;
+    }
+
+    &:hover {
+      transform: scale(1.025);
+    }
+
+    svg {
+      width: 16px;
+      height: 16px;
+      color: $text;
+    }
+
+    &.swiper-button-disabled {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+
+  .swiper-button-prev {
+    left: -15px;
+
+    @include w1250 {
+      left: -35px;
+    }
+
+    svg {
+      transform: rotate(180deg);
+    }
+  }
+
+  .swiper-button-next {
+    right: -15px;
+
+    @include w1250 {
+      right: -35px;
+    }
+  }
+}
+
+.lg-container {
+  .lg-backdrop {
+    background-color: rgba(5, 5, 5, 0.6);
+  }
+
+  .lg-thumb-outer {
+    background-color: transparent;
+  }
+
+  .lg-next,
+  .lg-prev {
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+
+    &:after,
+    &:before {
+      font-size: 24px;
+    }
+  }
+
+  .lg-thumb-item {
+    border-radius: 8px;
+    border: 2px solid transparent;
+    transition: all $transition-default;
+
+    &.active {
+      border-color: $primary;
+      box-shadow: inset 0 0 0 2px $primary;
+    }
+  }
+}
+
+.banner-consultation-variants {
+  padding-block: 100px;
+
+  .banner-consultation + .banner-consultation {
+    margin-top: 100px;
+  }
+}
+
+.doctor-rating {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 3;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 -20px 32px 0 rgba(38, 38, 51, 0.08);
+  background: $text-light;
+  padding-block: 16px 48px;
+  padding-inline: 16px;
+  border-radius: 24px 24px 0 0;
+  transition: transform $transition-default;
+
+  &.disabled {
+    pointer-events: none;
+    transform: translateY(120%);
+  }
+
+  @include tablet {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    width: auto;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 16px;
+    padding-block: 10px;
+    padding-inline: 12px;
+    box-shadow: 0 0 8px 0 rgba(75, 78, 82, 0.18);
+    background: $text-light;
+    max-width: max-content;
+  }
+
+  &__icon {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    pointer-events: none;
+    margin-right: 10px;
+
+    @include tablet {
+      display: flex;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+    }
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0 20px;
+
+    @include tablet {
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      max-width: max-content;
+    }
+  }
+
+  &__site {
+    max-width: 105px;
+    max-height: 16px;
+
+    img {
+      object-fit: contain;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__value {
+    display: flex;
+    align-items: center;
+    gap: 0 3.75px;
+
+    span {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      svg {
+        width: 18px;
+        height: 17px;
+      }
+    }
+  }
+
+  &__footer {
+    margin-top: 16px;
+    display: flex;
+    align-items: stretch;
+    gap: 0 8px;
+
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__phone {
+    flex: 0 0 auto;
+    border-radius: 16px;
+    padding: 10px;
+    width: 52px;
+    height: 52px;
+
+    svg {
+      width: 18px;
+      height: 18px;
+      color: $text;
+    }
+  }
+
+  &__record {
+    flex: 1;
+  }
+}
+
+.service-card {
+  border: 1px solid $border-secondary;
+  border-radius: 24px;
+  padding: 16px;
+  box-shadow: 0 2px 36px 0 rgba(38, 38, 51, 0.08), 0 1px 4px 1px rgba(38, 38, 51, 0.02);
+  background: $text-light;
+
+  @include tablet {
+    box-shadow: none;
+    padding: 12px;
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 20px 0;
+    height: 100%;
+
+    @include tablet {
+      gap: 24px 0;
+    }
+  }
+
+  &__image {
+    height: 150px;
+    border-radius: 16px;
+    overflow: hidden;
+
+    @include tablet {
+      height: 250px;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      pointer-events: none;
+    }
+  }
+
+  &__info {
+    padding-inline: 8px;
+    padding-bottom: 8px;
+
+    @include tablet {
+      padding-inline: 20px;
+      padding-bottom: 20px;
+    }
+  }
+
+  &__category {
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 1.1;
+    color: $text;
+
+    @include tablet {
+      font-size: 28px;
+    }
+
+    &:hover {
+      color: $primary;
+    }
+  }
+
+  &__list {
+    margin-top: 16px;
+
+    li {
+
+      a {
+        font-weight: 400;
+        font-size: 17px;
+        line-height: 1.4;
+        color: $text;
+
+        &:hover {
+          color: $primary;
+        }
+      }
+    }
+
+    li + li {
+      margin-top: 12px;
+    }
+  }
+
+  &__description {
+    margin-top: 12px;
+
+    p {
+      font-weight: 400;
+      font-size: 17px;
+      line-height: 1.4;
+      color: $text;
+    }
+  }
+
+  &__link {
+    margin-top: 32px;
+
+    @include tablet {
+      margin-top: 45px;
+    }
+  }
+}
+
+.service-hero {
+  border-radius: 24px;
+  padding-block: 16px;
+  padding-inline: 12px;
+  background: $bg-card;
+  margin-inline: -16px;
+
+  @include tablet {
+    padding-block: 12px;
+    margin-inline: 0;
+  }
+
+  @include laptop {
+    padding-inline: 48px 12px;
+    margin-inline: -48px;
+  }
+
+  &__inner {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-areas: "breadcrumbs"
+                          "image"
+                          "title"
+                          "description"
+                          "footer";
+    gap: 16px 0;
+
+    @include tablet {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-areas: "breadcrumbs image"
+                          "title image"
+                          "description image"
+                          "footer image";
+      grid-template-rows: auto auto auto 1fr;
+      gap: 24px 32px;
+      align-items: flex-start;
+    }
+  }
+
+  &__breadcrumbs {
+    grid-area: breadcrumbs;
+
+    @include tablet {
+      margin-top: 20px;
+    }
+  }
+
+  &__title {
+    grid-area: title;
+    margin-top: 8px;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 1.1;
+    color: $text;
+    text-align: center;
+
+    @include mobile {
+      font-size: 36px;
+    }
+
+    @include tablet {
+      margin-top: 0;
+      text-align: left;
+      font-size: 48px;
+    }
+  }
+
+  &__description {
+    grid-area: description;
+    max-width: 620px;
+    text-align: center;
+
+    @include tablet {
+      text-align: left;
+    }
+
+    p {
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 1.4;
+      color: $text;
+
+      @include mobile {
+        font-size: 17px;
+      }
+    }
+
+  }
+
+  &__footer {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    grid-area: footer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px 0;
+
+    @include tablet {
+      margin-top: auto;
+      margin-bottom: 50px;
+    }
+
+    @include desktop {
+      flex-direction: row;
+      gap: 0 24px;
+    }
+
+    p {
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 1.4;
+      color: $text-secondary;
+      text-align: center;
+
+      @include tablet {
+        text-align: left;
+        font-size: 17px;
+        color: $text;
+      }
+    }
+  }
+
+  &__image {
+    grid-area: image;
+    border-radius: 20px;
+    overflow: hidden;
+    height: 100%;
+    max-height: 320px;
+
+    @include tablet {
+      max-height: none;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+}
+
+.service-textblock {
+
+  &__title {
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 1.1;
+    color: $text;
+
+    @include tablet {
+      font-size: 42px;
+    }
+  }
+
+  &__description {
+    margin-top: 32px;
+
+    @include tablet {
+      margin-top: 40px;
+      max-width: 860px;
+    }
+
+    p {
+      font-weight: 400;
+      font-size: 17px;
+      line-height: 1.4;
+      color: $text;
+    }
+
+    p + p {
+      margin-top: 20px;
+
+      @include tablet {
+        margin-top: 30px;
+      }
+    }
+  }
+
+  &__image {
+    margin-top: 40px;
+    border-radius: 24px;
+    overflow: hidden;
+    height: 526px;
+    margin-inline: -16px;
+
+    @include tablet {
+      height: 730px;
+      margin-inline: 0;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+}
+
+.service-price {
+  position: relative;
+  border-radius: 24px;
+  padding-block: 32px 12px;
+  padding-inline: 16px;
+  box-shadow: 0 2px 36px 0 rgba(38, 38, 51, 0.08), 0 1px 4px 1px rgba(38, 38, 51, 0.02);
+  background: $bg-white;
+  margin-inline: -16px;
+
+  @include tablet {
+    padding-block: 40px 20px;
+    padding-inline: 20px;
+    margin-inline: 0;
+  }
+
+  @include laptop {
+    margin-inline: -48px;
+  }
+
+  &__inner {
+  }
+
+  &__info {
+
+    @include tablet {
+      padding-inline: 28px;
+    }
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 1.1;
+    color: $text;
+
+    @include tablet {
+      font-size: 42px;
+    }
+  }
+
+  &__list {
+    margin-top: 32px;
+
+    @include tablet {
+      margin-top: 20px;
+    }
+
+    li {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 0 24px;
+      padding-block: 16px;
+
+      p {
+        font-weight: 400;
+        font-size: 17px;
+        line-height: 1.4;
+        color: $text;
+      }
+
+      span {
+        white-space: nowrap;
+        font-weight: 400;
+        font-size: 17px;
+        line-height: 1.4;
+        text-align: right;
+        color: $text;
+      }
+
+      &:not(:last-child) {
+        border-bottom: 1px solid $border-secondary;
+      }
+    }
+  }
+
+  .service-price-note {
+    position: relative;
+    margin-top: 16px;
+    padding: 16px;
+    border-radius: 16px;
+    overflow: hidden;
+
+    @include tablet {
+      display: block;
+      margin-top: 20px;
+      padding: 24px;
+    }
+
+
+    &__text {
+      position: relative;
+      z-index: 1;
+
+      @include tablet {
+        max-width: calc(100% - 250px);
+      }
+
+      @include w1250 {
+        max-width: none;
+      }
+
+      p {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 1.4;
+        color: $text;
+
+        @include tablet {
+          font-size: 17px;
+        }
+
+        &:first-child {
+          font-size: 17px;
+          line-height: 1.1;
+          font-weight: 600;
+
+          @include tablet {
+            font-size: 20px;
+          }
+        }
+      }
+
+      p + p {
+        margin-top: 8px;
+
+        @include tablet {
+          margin-top: 4px;
+        }
+      }
+    }
+
+    &__img {
+      display: none;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 205px;
+      height: 205px;
+      margin-block: auto;
+      pointer-events: none;
+      z-index: 0;
+
+      @include tablet {
+        display: block;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+  }
+}
+
+.service-advantages {
+  background: $bg-card;
+  border-radius: 24px;
+  padding-block: 24px;
+  padding-inline: 24px;
+
+  @include tablet {
+    padding-block: 32px;
+    padding-inline: 48px;
+  }
+
+  @include laptop {
+    margin-inline: -48px;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: 100%;
+    gap: 32px 32px;
+
+    @include tablet {
+      align-items: stretch;
+      justify-content: space-between;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+
+    li {
+
+      @include tablet {
+        max-width: 185px;
+      }
+
+      p {
+        font-weight: 600;
+        font-size: 17px;
+        line-height: 1.1;
+        color: $text;
+
+        @include tablet {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}
+
+.service-suitable {
+
+  &__title {
+  }
+
+  &__list {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: 100%;
+    gap: 20px;
+
+    @include tablet {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include semiDesktop {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .service-suitable-card {
+    background: $bg-card;
+    border-radius: 12px;
+    overflow: hidden;
+
+    &:first-child {
+      grid-column: 1 / -1;
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 32px 50px;
+      min-height: 450px;
+
+      @include semiDesktop {
+        flex-direction: row;
+      }
+
+      .service-suitable-card__info {
+        max-width: 470px;
+      }
+    }
+
+    &:not(:first-child) {
+      min-height: 300px;
+
+      @include tablet {
+        min-height: 400px;
+      }
+    }
+
+    &__info {
+      padding-block: 24px 0;
+      padding-inline: 24px;
+
+      @include tablet {
+        padding-block: 32px 0;
+        padding-inline: 32px;
+      }
+    }
+
+    &__title {
+      font-weight: 600;
+      font-size: 26px;
+      line-height: 1.1;
+      color: $text;
+
+      @include tablet {
+        font-size: 28px;
+      }
+    }
+
+    &__text {
+      margin-top: 12px;
+      font-weight: 400;
+      font-size: 17px;
+      line-height: 1.4;
+      color: $text;
+    }
+
+    &__img {
+      max-width: 450px;
+      max-height: 250px;
+      margin-left: auto;
+
+      @include tablet {
+        max-height: 300px;
+      }
+
+      @include semiDesktop {
+        max-width: 650px;
+        max-height: 450px;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+}
+
+.service-reasons {
+
+  &__title {
+  }
+
+  &__slider {
+    margin-top: 32px;
+    margin-inline: -16px;
+
+    @include tablet {
+      margin-top: 40px;
+      margin-inline: 0;
+    }
+
+    @include laptop {
+      margin-inline: -48px;
+    }
+
+    .clinic-achievements {
+      width: auto;
+      margin-left: 0;
+      transform: none;
+
+      &__swiper-bg {
+        padding-inline: 0;
+      }
+    }
+  }
+
+}
+
+.service-standards {
+
+  &__title {
+
+  }
+
+  &__swiper {
+    margin-top: 40px;
+
+    .swiper {
+      overflow: unset;
+
+      .swiper-wrapper {
+        align-items: stretch;
+      }
+
+      .swiper-slide {
+        width: auto;
+        height: auto;
+      }
+
+    }
+
+  }
+
+  .service-standard-card {
+    background: $bg-card;
+    border-radius: 12px;
+    padding: 24px;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 320px;
+
+    @include tablet {
+      width: 310px;
+    }
+
+    &__index {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 56px;
+      height: 56px;
+      background: $text-light;
+      border-radius: 100%;
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 1;
+      text-align: center;
+      color: $text;
+    }
+
+    &__text {
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 1.1;
+      color: var(--text);
+    }
+  }
+}
+
+.service-steps {
+  &__title {
+    max-width: 860px;
+  }
+
+  &__list {
+    margin-top: 32px;
+    max-width: 860px;
+    margin-inline: auto;
+
+    @include tablet {
+      margin-top: 40px;
+    }
+
+    li + li {
+      margin-top: 12px;
+    }
+  }
+
+  .service-step {
+    background: $bg-card;
+    border-radius: 12px;
+    padding: 24px;
+    display: grid;
+    grid-template-columns: 100%;
+    align-items: flex-start;
+
+    @include tablet {
+      padding: 32px;
+      gap: 0 32px;
+      grid-template-columns: auto 1fr;
+    }
+
+    &__index {
+      grid-row: 3 / 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 56px;
+      height: 56px;
+      background: $text-light;
+      border-radius: 100%;
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 1;
+      text-align: center;
+      color: $text;
+    }
+
+    &__title {
+      font-weight: 600;
+      font-size: 22px;
+      line-height: 1.1;
+      color: $text;
+      margin-top: 48px;
+
+      @include tablet {
+        margin-top: 0;
+        font-size: 24px;
+      }
+    }
+
+    &__text {
+      margin-top: 12px;
+      font-weight: 400;
+      font-size: 17px;
+      line-height: 1.4;
+      color: $text;
+    }
+  }
+}
+
+.service-variants {
+
+  &__title {}
+
+  &__items {
+    margin-top: 32px;
+    display: grid;
+    grid-template-columns: 100%;
+    align-items: stretch;
+    gap: 20px;
+
+    @include tablet {
+      margin-top: 40px;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .service-variant {
+    border: 1px solid $border-secondary;
+    border-radius: 24px;
+    padding-block: 12px 24px;
+    padding-inline: 12px;
+    background: $text-light;
+
+    @include tablet {
+      padding-block: 12px 32px;
+    }
+
+    &__inner {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      height: 100%;
+    }
+
+    &__image {
+      border-radius: 16px;
+      height: 200px;
+      background: $bg-card;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-end;
+
+      @include tablet {
+        height: 350px;
+      }
+
+      img {
+        object-fit: contain;
+        pointer-events: none;
+        max-height: 100%;
+      }
+    }
+
+    &__info {
+      padding-inline: 12px;
+
+      @include tablet {
+        padding-inline: 20px;
+      }
+    }
+
+    &__title {
+      font-weight: 600;
+      font-size: 26px;
+      line-height: 1.1;
+      color: $text;
+
+      @include tablet {
+        font-size: 28px;
+      }
+    }
+
+    &__description {
+      margin-top: 12px;
+      font-weight: 400;
+      font-size: 17px;
+      line-height: 1.4;
+      color: $text;
+    }
+
+    &__list {
+      padding-inline: 12px;
+
+      @include tablet {
+        padding-inline: 20px;
+      }
+
+      &--title {
+        font-weight: 600;
+        font-size: 13px;
+        line-height: 1.4;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: $text-secondary;
+      }
+
+      ul {
+        margin-top: 8px;
+
+        li {
+          list-style-type: disc;
+          list-style-position: inside;
+          font-weight: 400;
+          font-size: 17px;
+          line-height: 1.4;
+          color: $text;
+        }
+
+        li + li {
+          margin-top: 8px;
+        }
+      }
+    }
+
+    &__footer {
+      margin-top: auto;
+      padding-inline: 12px;
+      padding-top: 12px;
+
+      @include tablet {
+        padding-top: 0;
+        padding-inline: 20px;
+      }
+    }
+
+    &__registration--button {
+      width: 100%;
+
+      @include tablet {
+        width: max-content;
+      }
+    }
+  }
+
+}
+
+.service-types {
+
+  &__title {}
+
+  &__swiper {
+    margin-top: 32px;
+
+    @include tablet {
+      margin-top: 40px;
+    }
+
+    .swiper {
+      overflow: visible;
+    }
+
+    .swiper-wrapper {
+      align-items: stretch;
+    }
+
+    .swiper-slide {
+      width: auto;
+      height: auto;
+      overflow: visible;
+    }
+  }
+
+  .service-type {
+    border: 1px solid $border-secondary;
+    border-radius: 24px;
+    padding: 12px;
+    background: $text-light;
+    width: 320px;
+    height: 100%;
+
+    @include tablet {
+      width: 310px;
+    }
+
+    &__inner {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      height: 100%;
+    }
+
+    &__image {
+      background: $bg-card;
+      border-radius: 16px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 220px;
+
+      img {
+        max-height: 180px;
+        pointer-events: none;
+      }
+    }
+
+    &__info {
+      padding-inline: 12px;
+    }
+
+    &__title {
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 1.1;
+      color: $text;
+    }
+
+    &__list {
+      margin-top: 16px;
+
+      li {
+        list-style-type: disc;
+        list-style-position: inside;
+        font-weight: 400;
+        font-size: 17px;
+        line-height: 1.4;
+        color: $text;
+      }
+
+      li + li {
+        margin-top: 8px;
+      }
+    }
+
+    &__footer {
+      margin-top: auto;
+      padding-inline: 12px;
+      padding-bottom: 12px;
+    }
+
+    .service-type-price {
+
+      &__header {
+        display: flex;
+        align-items: center;
+        gap: 0 4px;
+      }
+
+      &__title {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 1.4;
+        color: $text-teriary;
+      }
+
+      &__value {
+        margin-top: 4px;
+        display: inline-block;
+        white-space: nowrap;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 1.1;
+        color: $text;
+      }
+    }
+
+    .service-type-information {
+      position: relative;
+
+      &__button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 13px;
+        height: 13px;
+
+        svg {
+          width: 100%;
+          height: 100%;
+          color: $text-teriary;
+        }
+      }
+
+      &__list {
+        position: absolute;
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+  }
+}
+
+.tippy-box[data-theme~='service-type'] {
+  background: $c950;
+  backdrop-filter: blur(60px);
+  border-radius: 16px;
+  padding: 10px 12px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.4;
+  color: $text-light;
+  box-shadow: none;
+
+  .tippy-content {
+    padding: 0;
+  }
+}
+
+/*=========pages-styles=========*/
+.doctors {
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 4fr));
+    gap: 20px;
+  }
+
+  &__banner-consultation {
+    margin-top: 120px;
+
+    @include mobile {
+      margin-top: 180px;
+    }
+  }
+
+  &__map {
+    margin-top: 80px;
+
+    @include mobile {
+      margin-top: 180px;
+    }
+  }
+}
+
+.doctor-detail {
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 100%;
+
+    @include tablet {
+      grid-template-columns: auto calc(100% - 52px - 30px);
+      gap: 0 30px;
+    }
+
+    @include desktop {
+      grid-template-columns: auto calc(100% - 52px - 80px);
+      gap: 0 80px;
+    }
+
+    &--left {
+      display: none;
+
+      @include tablet {
+        display: block;
+      }
+    }
+
+    &--right {
+      max-width: 1040px;
+    }
+
+    section {
+      box-shadow: 0 2px 36px 0 rgba(38, 38, 51, 0.08), 0 1px 4px 1px rgba(38, 38, 51, 0.02);
+      background: $bg-white;
+      border-radius: 24px;
+      padding-inline: 24px;
+      padding-block: 24px;
+      margin-inline: -16px;
+
+      @include tablet {
+        margin-inline: 0;
+      }
+
+      h5 {
+        font-weight: 600;
+        font-size: 28px;
+        line-height: 1.2;
+        color: $text;
+      }
+
+      .swiper {
+        overflow: hidden;
+        margin-inline: -24px;
+        padding-inline: 24px;
+      }
+
+      .swiper-button-prev {
+        left: -35px;
+
+        @include w1250 {
+          left: -55px;
+        }
+      }
+
+      .swiper-button-next {
+        right: -35px;
+
+        @include w1250 {
+          right: -55px;
+        }
+      }
+    }
+
+    section + section {
+      margin-top: 24px;
+    }
+  }
+
+  &__back-button {
+    position: sticky;
+    top: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+    padding: 14px;
+    width: 52px;
+    height: 52px;
+
+    svg {
+      width: 16px;
+      height: 16px;
+      color: $text;
+    }
+  }
+
+  &__about {
+    display: grid;
+    grid-template-columns: 100%;
+    justify-content: space-between;
+    gap: 28px 0;
+    margin-bottom: 80px;
+
+    @include tablet {
+      gap: 0 20px;
+      grid-template-columns: .51fr .485fr;
+    }
+
+    @include desktop {
+      gap: 0 40px;
+    }
+
+    &--preview {
+      height: 465px;
+      margin-inline: -16px;
+      overflow: hidden;
+
+      @include tablet {
+        margin-inline: 0;
+        border-radius: 24px;
+      }
+
+      @include desktop {
+        height: 600px;
+      }
+
+      .video-card {
+
+        &__poster {
+          background: linear-gradient(180deg, #f7f9fa 0%, #edeff1 50%, #dfe4e9 100%);
+
+          img {
+            object-fit: contain;
+            object-position: bottom;
+          }
+        }
+      }
+    }
+
+    &--photo {
+      background: linear-gradient(180deg, #f7f9fa 0%, #edeff1 50%, #dfe4e9 100%);
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-position: bottom;
+        object-fit: contain;
+      }
+    }
+
+    &--description {
+      width: 100%;
+    }
+
+    &--title {
+      text-align: center;
+
+      @include tablet {
+        text-align: left;
+      }
+
+      @include desktop {
+        font-size: 48px;
+      }
+    }
+
+    &--features {
+      margin-top: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 4px;
+
+      @include tablet {
+
+        justify-content: flex-start;
+      }
+
+      p {
+        font-weight: 500;
+        font-size: 17px;
+        line-height: 1.4;
+        color: $text;
+        white-space: nowrap;
+      }
+
+      span {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 8px;
+
+        &::before {
+          content: '';
+          position: absolute;
+          width: 3px;
+          height: 3px;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          margin: auto;
+          background-color: $text;
+          opacity: 0.5;
+          border-radius: 100%;
+        }
+      }
+    }
+
+    &--text {
+      margin-top: 20px;
+
+      p {
+        font-weight: 400;
+        font-size: 17px;
+        line-height: 1.4;
+        color: $text-paragraph;
+      }
+    }
+
+    &--button {
+      margin-top: 36px;
+      display: none;
+
+      @include tablet {
+        display: flex;
+      }
+    }
+  }
+
+  &__services {
+    .doctor-services {
+      margin-top: 20px;
+    }
+  }
+
+  &__works {
+
+    .doctor-works {
+      margin-top: 24px;
+    }
+  }
+
+  &__publications {
+
+    .doctor-publications {
+      margin-top: 24px;
+    }
+  }
+
+  &__reviews {
+
+    .doctor-reviews {
+      margin-top: 24px;
+    }
+  }
+
+  &__achievements {
+    display: flex;
+    flex-direction: column;
+    gap: 24px 0;
+  }
+
+  &__works,
+  &__publications,
+  &__reviews,
+  &__achievements {
+
+  }
+
+  &__banner-consultation {
+    margin-top: 120px;
+
+    @include mobile {
+      margin-top: 180px;
+    }
+  }
+
+  &__map {
+    margin-top: 80px;
+
+    @include mobile {
+      margin-top: 180px;
+    }
+  }
+
+  &__others {
+    margin-top: 120px;
+
+    @include mobile {
+      margin-top: 140px;
+    }
+  }
+
+  .doctor-rating + .doctor-detail__about--title {
+    @include tablet {
+      margin-top: 20px;
+    }
+  }
+}
+
+.page-services {
+
+  &__list {
+    display: grid;
+    grid-template-columns: 100%;
+    gap: 12px 0;
+
+    @include tablet {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px 20px;
+    }
+  }
+
+  &__banner-consultation {
+    margin-top: 120px;
+
+    @include tablet {
+      margin-top: 160px;
+    }
+  }
+
+  &__map {
+    margin-top: 80px;
+
+    @include tablet {
+      margin-top: 180px;
+    }
+  }
+}
+
+.page-service-category {
+
+  .section-title {
+    display: flex;
+    align-items: flex-end;
+    gap: 0 12px;
+    margin-bottom: 32px;
+
+    @include tablet {
+      margin-bottom: 40px;
+    }
+
+    h5 {
+      @media (max-width: 768px) {
+        font-size: 32px;
+      }
+    }
+
+    span {
+      color: $text-teriary;
+
+      @media (max-width: 768px) {
+        font-size: 32px;
+      }
+    }
+  }
+
+  .service-hero {
+  }
+
+  .clinic-services {
+    margin-top: 100px;
+
+    @include tablet {
+      margin-top: 140px;
+    }
+  }
+
+  .service-textblock {
+    margin-top: 100px;
+
+    @include tablet {
+      margin-top: 140px;
+    }
+  }
+
+  .service-price {
+    margin-top: -40px;
+
+    @include tablet {
+      margin-top: 140px;
+    }
+  }
+
+  &__banner-consultation {
+    margin-top: 60px;
+  }
+
+  &__publications {
+    margin-top: 100px;
+
+    @include tablet {
+      margin-top: 140px;
+    }
+
+    .doctor-publications-slider .swiper {
+
+      .swiper-slide {
+        width: 300px;
+
+        @include tablet {
+          width: 310px;
+        }
+      }
+    }
+  }
+
+  &__reviews {
+    margin-top: 100px;
+
+    @include tablet {
+      margin-top: 140px;
+    }
+
+    .doctor-reviews-slider .swiper {
+
+      .swiper-slide {
+        width: 324px;
+
+        @include tablet {
+          width: 420px;
+        }
+      }
+    }
+  }
+
+  &__publications,
+  &__reviews {
+    .swiper {
+      overflow: unset;
+
+      @include laptop {
+        overflow: hidden;
+      }
+    }
+  }
+
+  &__map {
+    margin-top: 100px;
+
+    @include tablet {
+      margin-top: 140px;
+    }
+  }
+}
+
+.page-service-detail {
+  .section-title {
+    display: flex;
+    align-items: flex-end;
+    gap: 0 12px;
+    margin-bottom: 32px;
+
+    @include tablet {
+      margin-bottom: 40px;
+    }
+
+    h5 {
+      @media (max-width: 768px) {
+        font-size: 32px;
+      }
+    }
+
+    span {
+      color: $text-teriary;
+
+      @media (max-width: 768px) {
+        font-size: 32px;
+      }
+    }
+  }
+
+  .service-advantages {
+    margin-top: 16px;
+
+    @include tablet {
+      margin-top: 24px;
+    }
+  }
+
+  .service-suitable {
+    margin-top: 100px;
+
+    @include tablet {
+      margin-top: 140px;
+    }
+  }
+
+  .service-reasons {
+    margin-top: 100px;
+
+    @include tablet {
+      margin-top: 140px;
+    }
+  }
+
+  .service-standards {
+    margin-top: 100px;
+
+    @include tablet {
+      margin-top: 140px;
+    }
+  }
+
+  .service-variants {
+    margin-top: 100px;
+
+    @include tablet {
+      margin-top: 140px;
+    }
+  }
+
+  .service-types {
+    margin-top: 100px;
+
+    @include tablet {
+      margin-top: 140px;
+    }
+  }
+
+  .service-steps {
+    margin-top: 100px;
+
+    @include tablet {
+      margin-top: 140px;
+    }
+  }
+
+  .service-price {
+    margin-top: 100px;
+
+    @include tablet {
+      margin-top: 140px;
+    }
+  }
+
+  &__banner-consultation {
+    margin-top: 60px;
+  }
+
+  &__reviews {
+    margin-top: 100px;
+
+    @include tablet {
+      margin-top: 140px;
+    }
+
+    .doctor-reviews-slider .swiper {
+      overflow: unset;
+
+      @include laptop {
+        overflow: hidden;
+      }
+
+      .swiper-slide {
+        width: 324px;
+
+        @include tablet {
+          width: 420px;
+        }
+      }
+    }
+  }
+
+  &__map {
+    margin-top: 100px;
+
+    @include tablet {
+      margin-top: 140px;
+    }
+  }
+}
+
+/*========/pages-styles=========*/

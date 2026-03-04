@@ -1,0 +1,70 @@
+@use '../variables.scss' as *;
+@use '../mixins.scss' as *;
+
+.other-doctors {
+
+  &__title {}
+
+  &__slider {
+    position: relative;
+    margin-top: 40px;
+
+    &--button-prev,
+    &--button-next {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      margin: auto 0;
+      z-index: 2;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 100%;
+      padding: 12px;
+      width: 48px;
+      height: 48px;
+      box-shadow: 0 4px 20px 0 rgba(38, 38, 51, 0.12);
+      background: $bg-white;
+      transition: opacity $transition-default, visibility $transition-default;
+
+      svg {
+        width: 16px;
+        height: 16px;
+        color: $text;
+      }
+
+      &.swiper-button-disabled {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+      }
+    }
+
+    &--button-prev {
+      left: -24px;
+    }
+    &--button-next {
+      right: -24px;
+
+      transform: rotate(180deg);
+    }
+
+    .swiper {
+
+      .swiper-wrapper {
+
+        .swiper-slide {
+          width: auto;
+          height: auto;
+
+          .doctor-card {
+            width: 310px;
+            min-height: 420px;
+            max-height: none;
+          }
+        }
+      }
+    }
+  }
+}

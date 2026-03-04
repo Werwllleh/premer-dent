@@ -1,0 +1,20 @@
+extends ../../app/pug/layouts/base-secondary.pug
+
+append vars
+  - title = "Banner-consultation-variants"
+  - description = "Описание Banner-consultation-variants"
+
+append content
+    +regPage('banner-consultation-variants')
+    +regBlock('banner-consultation', true, true)
+
+    .banner-consultation-variants
+        +bannerConsultation("")
+        +bannerConsultation("./images/doctors/doctor.webp")
+        +bannerConsultation("./images/doctors/doctor2.webp")
+        +bannerConsultation("./images/doctors/doctor3.webp")
+        +bannerConsultation("./images/doctors/doctor4.webp")
+        +bannerConsultation("./images/doctors/doctor5.webp")
+        +bannerConsultation("./images/doctors/doctor6.webp")
+        +bannerConsultation("./images/doctors/doctor7.webp")
+        +bannerConsultation("./images/doctors/doctor8.webp")

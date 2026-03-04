@@ -1,0 +1,97 @@
+@use './variables.scss' as *;
+@use './mixins.scss' as *;
+
+body {
+  font-family: $font-family;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+button, input, textarea {
+  font-family: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-family;
+  letter-spacing: -0.02em;
+  color: $text;
+}
+
+.h1 {
+  font-size: 34px;
+  font-weight: 600;
+  line-height: 1.05;
+
+  @include tablet {
+    font-size: 54px;
+  }
+
+  @include desktop {
+    font-size: 80px;
+  }
+}
+
+.h2 {
+  font-size: 28px;
+  line-height: 1.1;
+  font-weight: 600;
+
+  @include tablet {
+    font-size: 32px;
+  }
+
+  @include desktop {
+    font-size: 42px;
+  }
+
+}
+
+.h3 {
+  font-size: 24px;
+  line-height: 1.1;
+  font-weight: 600;
+
+  @include tablet {
+    font-size: 28px;
+  }
+
+  @include desktop {
+    font-size: 32px;
+  }
+}
+
+/*
+
+.h4 {
+  font-size: 22px;
+  line-height: 1.1;
+
+  @include tablet {
+    font-size: 26px;
+  }
+
+  @include desktop {
+    font-size: 34px;
+  }
+}
+
+.h5 {
+  font-size: 20px;
+  line-height: 1.1;
+
+  @include tablet {
+    font-size: 22px;
+  }
+
+  @include desktop {
+    font-size: 26px;
+  }
+}
+
+.h6 {
+  font-size: 20px;
+  line-height: 1.1;
+}
+*/
+

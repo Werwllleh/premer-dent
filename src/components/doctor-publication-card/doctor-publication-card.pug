@@ -1,0 +1,18 @@
+mixin doctorPublicationCard(source, title, date, views)
+    //- регистрация
+    //- +regLibrary('lib-name/lib.css', 'lib-name/lib.js')
+    //- +regComponent('component-name', true, true)
+
+    //doctor-publication-card
+    .doctor-publication-card&attributes(attributes)
+        a(href="#").doctor-publication-card__link
+        .doctor-publication-card__body
+            .doctor-publication-card__image
+                img(src=`./images/publications/${source}`, alt=title)
+            .doctor-publication-card__info
+                p.doctor-publication-card__title= title
+                .doctor-publication-card__footer
+                    p= date
+                    span
+                        +svg("eye")
+                        = views

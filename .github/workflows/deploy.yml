@@ -1,0 +1,55 @@
+name: Deploy to dist branch
+
+on:
+  push:
+    branches:
+      - master   # или dev, откуда деплоим
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Клонируем репозиторий
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          persist-credentials: true # чтобы пушить обратно
+          fetch-depth: 0            # полная история
+
+      # 2. Устанавливаем Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'   # любая версия Node.js, которая у тебя в проекте
+
+      # 3. Устанавливаем зависимости
+      - name: Install dependencies
+        run: npm ci
+
+      # 4. Билдим проект
+      - name: Build
+        run: npm run build
+
+      # 5. Пушим dist в ветку dist
+      - name: Deploy to dist branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          
+          # dist есть?
+          test -d dist
+          
+          # Создаем временную ветку из dist
+          git fetch origin
+          git checkout dist || git checkout --orphan dist
+          
+          git rm -rf . || true
+          
+          # Копируем билд
+          cp -r dist/* .
+          
+          # Коммит и пуш
+          git add .
+          git commit -m "Deploy from GitHub Actions: $(date '+%Y-%m-%d %H:%M:%S')"
+          git push -f origin dist

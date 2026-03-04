@@ -1,0 +1,188 @@
+@use '../../app/scss/variables.scss' as *;
+@use '../../app/scss/mixins' as *;
+
+// input
+.input-field {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  transition: all $transition-default;
+
+  &.borderless {
+    input {
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      border-radius: 0;
+      border-bottom: 1px solid $border;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+
+    .input-field__placeholder {
+      left: 0;
+    }
+  }
+
+  input {
+    position: relative;
+    z-index: 1;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    padding: 16px 12px;
+    outline: none;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 1.41176;
+    color: $text-secondary;
+    background-color: rgba(5, 80, 130, 0.05);
+    transition: color $transition-default, border-color $transition-default, background-color $transition-default, box-shadow $transition-default;
+
+    @include tablet {
+      border-radius: 16px;
+      padding: 22px 16px 8px;
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 3px rgba(228, 24, 116, 0.2);
+      border-color: $primary;
+      background-color: $text-light;
+      color: #1e252b;
+    }
+
+    &:hover:not(:focus):not(.error) {
+      background-color: rgba(22, 66, 111, 0.1);
+    }
+
+    &:focus + .input-field__placeholder {
+      transform: translateY(-15px);
+      font-weight: 500;
+      font-size: 13px;
+      line-height: 1.23077;
+      color: $primary;
+    }
+
+    &.filled:not(:focus) + .input-field__placeholder {
+      transform: translateY(-15px);
+      font-weight: 500;
+      font-size: 13px;
+      line-height: 1.23077;
+      color: $text-secondary;
+    }
+
+    &.error {
+      color: #1e252b;
+      background: rgba(235, 42, 42, 0.1);
+
+      & + .input-field__placeholder {
+        transform: translateY(-15px);
+        font-weight: 500;
+        font-size: 13px;
+        line-height: 1.23077;
+        color: #eb2a2a;
+      }
+    }
+
+    &.error ~ .input-field__error {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(20px);
+    }
+
+    &.filled[valid] {
+      padding-right: 25px;
+      color: #1e252b;
+
+      & + .input-field__placeholder {
+        transform: translateY(-15px);
+        font-weight: 500;
+        font-size: 13px;
+        line-height: 1.23077;
+      }
+
+      @include tablet {
+        padding-right: 30px;
+      }
+    }
+
+    &.filled[valid] ~ .input-field__verified {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    &.filled[valid]:not(:focus) {
+      border-color: transparent;
+      background-color: rgba(5, 80, 130, 0.04);
+
+      & + .input-field__placeholder {
+        color: $text-secondary;
+      }
+    }
+  }
+
+  &__placeholder {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 12px;
+    bottom: 0;
+    height: max-content;
+    margin: auto 0;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 1.41176;
+    color: $text-secondary;
+    pointer-events: none;
+    user-select: none;
+    transform: translateY(0);
+    transition: font-size $transition-default, transform $transition-default, color $transition-default;
+
+    @include tablet {
+      left: 16px;
+      font-size: 18px;
+    }
+  }
+
+  &__error {
+    position: absolute;
+    z-index: 0;
+    left: 0;
+    bottom: 0;
+    font-weight: 450;
+    font-size: 13px;
+    line-height: 1.7;
+    letter-spacing: 0;
+    color: #e34132;
+    pointer-events: none;
+    user-select: none;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(0);
+    transition: visibility $transition-default, opacity $transition-default, transform $transition-default;
+
+    &.show {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(16px);
+    }
+  }
+
+  &__verified {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 12px;
+    bottom: 0;
+    height: max-content;
+    margin: auto 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: visibility $transition-default, opacity $transition-default, transform $transition-default;
+
+    svg {
+      width: 13px;
+      height: 8px;
+      color: $primary;
+    }
+  }
+}

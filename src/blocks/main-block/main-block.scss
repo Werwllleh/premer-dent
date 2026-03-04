@@ -1,0 +1,249 @@
+@use '../../app/scss/variables.scss' as *;
+@use '../../app/scss/mixins.scss' as *;
+
+// main-block
+.main-block {
+  position: relative;
+  height: 100%;
+
+  &__container {
+    position: relative;
+  }
+
+  &__images {
+    height: 100%;
+
+    .swiper {
+      height: 100%;
+
+      .swiper-wrapper {
+        align-items: stretch;
+      }
+
+      .swiper-slide {
+        height: auto;
+      }
+    }
+
+    .main-images-slide {
+      position: relative;
+      height: 100%;
+
+      &__bg {
+        position: relative;
+        height: 100%;
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(180deg, rgba(38, 38, 51, 0.35) 0%, rgba(38, 38, 51, 0.25) 10%, rgba(38, 38, 51, 0.1) 30%, rgba(38, 38, 51, 0.1) 60%, rgba(38, 38, 51, 0.45) 100%);
+        }
+
+        img, video {
+          width: 100%;
+          height: 100%;
+          max-height: 100vh;
+          object-fit: cover;
+          pointer-events: none;
+        }
+      }
+
+      &__body {
+        position: absolute;
+        bottom: 125px;
+        left: 0;
+        width: 100%;
+        z-index: 1;
+
+        @include tablet {
+          bottom: 180px;
+        }
+      }
+
+      &__container {
+        height: 100%;
+      }
+
+      &__content {
+      }
+
+      &__title {
+        color: $text-light;
+
+        @media (max-width: 768px) {
+          font-size: 44px;
+        }
+      }
+
+      &__description {
+        margin-top: 16px;
+        font-weight: 400;
+        font-size: 17px;
+        line-height: 1.6;
+        color: $text-light;
+
+        @include tablet {
+          margin-top: 20px;
+          font-size: 20px;
+        }
+      }
+
+      &__link {
+        margin-top: 40px;
+      }
+    }
+  }
+
+  &__thumbs {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+
+    &--container {
+    }
+
+    .swiper {
+
+      .swiper-wrapper {
+        align-items: stretch;
+        justify-content: center;
+
+        @include tablet {
+          justify-content: flex-start;
+        }
+      }
+
+      .swiper-slide {
+        height: auto;
+        width: 24px;
+        transition: width .3s ease-in-out;
+
+        @include tablet {
+          width: auto;
+        }
+
+        @media (max-width: 768px) {
+          &:not(.swiper-slide-thumb-active) {
+            .main-thumbs-slide {
+              &__row {
+
+                span {
+                  background: rgba(255, 255, 255, 0.25);
+                }
+              }
+            }
+          }
+        }
+
+      }
+
+      .swiper-slide-thumb-active {
+        width: 96px;
+
+        @include tablet {
+          width: auto;
+        }
+
+        .main-thumbs-slide {
+
+          @include tablet {
+            backdrop-filter: blur(20px);
+            background: rgba(255, 255, 255, 0.8);
+          }
+
+          &__title {
+
+            @include tablet {
+              color: #000;
+              opacity: 1;
+            }
+
+          }
+
+          &__row {
+            opacity: 1;
+            visibility: visible;
+          }
+
+        }
+      }
+    }
+
+    &--slide {
+      height: 100%;
+    }
+
+    .main-thumbs-slide {
+      cursor: pointer;
+      transition: background-color $transition-default, backdrop-filter $transition-default;
+
+      @include tablet {
+        height: 100%;
+        min-height: 96px;
+        border-radius: 16px;
+        padding: 12px;
+        backdrop-filter: blur(50px);
+        background-color: rgba(255, 255, 255, 0.12);
+        display: flex;
+        flex-direction: column;
+      }
+
+      &__title {
+        display: none;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 1.4;
+        text-transform: uppercase;
+        color: $text-light;
+        opacity: .6;
+        transition: color $transition-default, opacity $transition-default;
+
+        @include tablet {
+          display: block;
+        }
+      }
+
+      &__row {
+        margin-top: auto;
+        width: 100%;
+        border-radius: 99px;
+        height: 4px;
+        backdrop-filter: blur(16px);
+        background: rgba(255, 255, 255, 0.25);
+        position: relative;
+        display: block;
+        pointer-events: none;
+        overflow: hidden;
+        transition: opacity $transition-default, visibility $transition-default;
+
+        @include tablet {
+          opacity: 0;
+          border-radius: 8px;
+          visibility: hidden;
+          backdrop-filter: none;
+          background-color: rgba(0, 0, 0, 0.12);
+        }
+
+        span {
+          position: absolute;
+          left: 0;
+          top: 0;
+          bottom: 0;
+          margin: auto 0;
+          width: 0;
+          background: $text-light;
+          border-radius: 99px;
+
+          @include tablet {
+            background: #000;
+            border-radius: 0;
+          }
+        }
+      }
+    }
+  }
+}

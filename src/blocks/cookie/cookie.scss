@@ -1,0 +1,79 @@
+@use '../../app/scss/variables.scss' as *;
+@use '../../app/scss/mixins.scss' as *;
+
+// cookie
+.cookie {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  border-radius: 16px 16px 0 0;
+  box-shadow: 0 20px 32px 25px rgba(38, 38, 51, 0.1);
+  background: $bg-white;
+  width: 100%;
+  transform: translateY(100%);
+  transition: transform $transition-default;
+  z-index: 99;
+
+  @media (min-width: 650px) {
+    box-shadow: 0 20px 32px -4px rgba(38, 38, 51, 0.08), 0 8px 12px -4px rgba(38, 38, 51, 0.08);
+    width: auto;
+    border-radius: 16px;
+    right: 12px;
+  }
+
+  &.show {
+    transform: translateY(0);
+
+    @media (min-width: 650px) {
+      transform: translateY(-12px);
+    }
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 14px;
+    gap: 14px 0;
+
+    @include mobile {
+      flex-direction: row;
+      align-items: center;
+      gap: 0 14px;
+    }
+
+    @media (min-width: 650px) {
+      padding: 14px;
+    }
+
+  }
+
+  &__description {
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 1.4;
+    color: $text;
+
+    @include mobile {
+      max-width: 490px;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: underline;
+      text-decoration-skip-ink: none;
+      text-underline-offset: 3px;
+
+      &:hover {
+        color: $primary;
+      }
+    }
+  }
+
+  &__button {
+    width: 100%;
+
+    @include mobile {
+      width: auto;
+    }
+  }
+}

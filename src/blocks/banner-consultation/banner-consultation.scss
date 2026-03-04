@@ -1,0 +1,156 @@
+@use '../../app/scss/variables.scss' as *;
+@use '../../app/scss/mixins.scss' as *;
+
+// banner-consultation
+.banner-consultation {
+  border-radius: 24px;
+  background-color: $c100;
+  position: relative;
+  margin-inline: -16px;
+
+  @include tablet {
+    margin-inline: 0;
+  }
+
+  @include laptop {
+    margin-inline: -48px;
+  }
+
+  &__body {
+    display: grid;
+    grid-template-columns: 100%;
+
+    gap: 35px;
+
+    @include semiDesktop {
+      grid-template-columns: 470px calc(100% - 500px);
+      justify-content: space-between;
+      gap: 30px;
+    }
+  }
+
+  &__left {
+    padding: 40px 16px 0;
+
+    @include tablet {
+      padding: 40px 20px 0;
+    }
+
+    @include semiDesktop {
+      padding: 40px 0 64px 50px;
+    }
+  }
+
+  &__form {}
+
+  &__right {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__vector {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+
+    @include semiDesktop {
+      top: 0;
+      justify-content: flex-end;
+      z-index: 0;
+    }
+
+
+    svg {
+      width: 100%;
+      height: 100%;
+      color: $white;
+
+      @include semiDesktop {
+        max-width: 790px;
+        max-height: 610px;
+      }
+
+    }
+  }
+
+  &__image {
+    position: relative;
+    z-index: 1;
+    margin: 0 auto;
+
+    @include semiDesktop {
+      position: absolute;
+      right: 50px;
+      left: 50px;
+      bottom: 0;
+      //margin: auto;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      max-width: 305px;
+      max-height: 330px;
+      object-fit: contain;
+      object-position: center;
+      pointer-events: none;
+
+      @include semiDesktop {
+        object-position: right;
+      }
+
+      @include desktop {
+        max-width: 710px;
+        max-height: 650px;
+      }
+    }
+  }
+
+  .banner-consultation-doctor {
+    position: absolute;
+    right: 12px;
+    bottom: 12px;
+    border-radius: 12px;
+    padding: 12px;
+    z-index: 1;
+    backdrop-filter: blur(10px);
+    background: linear-gradient(90deg, rgba(38, 38, 51, 0.2) 0%, rgba(38, 38, 51, 0.25) 100%);
+
+    @include tablet {
+      right: 20px;
+      bottom: 20px;
+    }
+
+    &__name {
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 1.4;
+      color: $text-light;
+    }
+
+    &__position {
+      margin-top: 2px;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 1.4;
+      color: $text-light;
+      opacity: 0.8;
+    }
+
+    &__experience {
+      display: block;
+      margin-top: 12px;
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 1.16667;
+      text-transform: uppercase;
+      color: $text-light;
+    }
+  }
+}

@@ -1,0 +1,74 @@
+@use '../../app/scss/variables.scss' as *;
+
+// ui
+.page-ui {
+  position: relative;
+  padding-top: 130px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    transform: translateX(-50%);
+    margin-left: 50%;
+    height: 100%;
+    background-color: $text-teriary;
+  }
+
+  section {
+    margin-top: 30px;
+    padding-block: 40px;
+    padding-inline: 20px;
+
+    &.buttons {
+      background: #9747ff;
+
+      display: flex;
+      gap: 20px;
+
+    }
+
+    h4 {
+      margin-bottom: 20px;
+    }
+  }
+
+  .buttons__list {
+    display: flex;
+    gap: 20px;
+
+    &--col {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding: 20px;
+      border: 1px dashed #9747ff;
+      border-radius: 5px;
+
+      &:nth-child(1) {
+      }
+
+      &:nth-child(2) {
+      }
+
+      &:nth-child(3) {
+      }
+
+      &:nth-child(4) {
+        border-color: transparent;
+        background: #9747ff;
+      }
+    }
+  }
+
+  .buttons__modal {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+}
+
+

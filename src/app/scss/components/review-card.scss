@@ -1,0 +1,122 @@
+@use '../variables.scss' as *;
+@use '../mixins.scss' as *;
+
+.review-card {
+  background: $bg-card;
+  border-radius: 12px;
+  padding: 16px;
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    height: 100%;
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  &__name {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.4;
+    color: $text-secondary;
+  }
+
+  &__score {
+    display: flex;
+    align-items: center;
+    gap: 0 5px;
+    box-shadow: 0 1px 4px 0 rgba(38, 38, 51, 0.08), 0 1px 2px -1px rgba(38, 38, 51, 0.08);
+    background: $text-light;
+    border-radius: 99px;
+    padding-block: 4px;
+    padding-inline: 4px 6px;
+    font-weight: 500;
+    font-size: 14px;
+    color: $text;
+    max-width: max-content;
+
+    span {
+      flex: 0 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 16px;
+      height: 16px;
+
+      svg {
+        width: 15px;
+        height: 14px;
+        color: #fc0;
+      }
+    }
+  }
+
+  &__middle {
+  }
+
+  &__text {
+
+    p {
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 1.4;
+      color: $text;
+
+      @include mobile {
+        font-size: 17px;
+      }
+    }
+  }
+
+  &__footer {
+    margin-top: auto;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__service {
+    display: flex;
+    align-items: flex-end;
+    gap: 0 4px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.16667;
+    color: $text-teriary;
+    white-space: nowrap;
+
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &.ya {
+        svg {
+          max-width: 42px;
+        }
+      }
+
+      &.gis {
+        svg {
+          max-width: 45px;
+        }
+      }
+
+      &.pd {
+        svg {
+          max-width: 92px;
+          height: 11px;
+        }
+      }
+
+      svg {
+        height: 13px;
+      }
+    }
+  }
+}

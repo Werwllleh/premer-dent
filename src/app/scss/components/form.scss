@@ -1,0 +1,20 @@
+@use '../variables.scss' as *;
+
+.form {
+
+  &__error {
+    color: $primary;
+    max-height: 0;
+    opacity: 0;
+    visibility: hidden;
+    overflow: hidden;
+    transition: opacity $transition-default, visibility $transition-default, max-height $transition-default, margin-top $transition-default;
+
+    &.active {
+      margin-top: 15px;
+      opacity: 1;
+      visibility: visible;
+      max-height: 50px;
+    }
+  }
+}

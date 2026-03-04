@@ -1,0 +1,82 @@
+mixin mainBlock()
+    //- регистрация
+    //- +regLibrary('lib-name/lib.css', 'lib-name/lib.js')
+    //- +regComponent('component-name', true, true)
+
+    //main-block
+    .main-block&attributes(attributes)
+        .main-block__images
+            .main-block__images--swiper.swiper
+                .swiper-wrapper
+                    .swiper-slide
+                        .main-images-slide
+                            .main-images-slide__bg
+                                img(src="./images/main/poster.webp")
+                            .main-images-slide__body
+                                .main-images-slide__container.container
+                                    .main-images-slide__content
+                                        h1.h1.main-images-slide__title Безупречная улыбка за&nbsp;одно посещение
+                                        p.main-images-slide__description Зубы станут светлее на 8 – 12 тонов
+                                        a(href="#").btn.primary.medium.main-images-slide__link Узнать подробнее
+                    .swiper-slide
+                        .main-images-slide
+                            .main-images-slide__bg
+                                video(autoplay, playsinline, muted, loop, poster="./images/main/poster.webp")
+                                    source(src="./images/main/video.mp4", type="video/mp4")
+                                    source(src="./images/main/video.webm", type="video/webm")
+                            .main-images-slide__body
+                                .main-images-slide__container.container
+                                    .main-images-slide__content
+                                        h1.h1.main-images-slide__title Идеальное очищение ваших&nbsp;зубов
+                                        p.main-images-slide__description Описание слайда
+                                        a(href="#").btn.primary.medium.main-images-slide__link Узнать подробнее
+                    .swiper-slide
+                        .main-images-slide
+                            .main-images-slide__bg
+                                img(src="./images/main/poster.webp")
+                            .main-images-slide__body
+                                .main-images-slide__container.container
+                                    .main-images-slide__content
+                                        h1.h1.main-images-slide__title Восстановите утраченный зуб в&nbsp;день&nbsp;его удаления
+                                        p.main-images-slide__description Описание слайда
+                                        a(href="#").btn.primary.medium.main-images-slide__link Узнать подробнее
+                    .swiper-slide
+                        .main-images-slide
+                            .main-images-slide__bg
+                                video(autoplay, playsinline, muted, loop, poster="./images/main/poster.webp")
+                                    source(src="./images/main/video.mp4", type="video/mp4")
+                                    source(src="./images/main/video.webm", type="video/webm")
+                            .main-images-slide__body
+                                .main-images-slide__container.container
+                                    .main-images-slide__content
+                                        h1.h1.main-images-slide__title Идеальное очищение ваших&nbsp;зубов
+                                        p.main-images-slide__description Описание слайда
+                                        a(href="#").btn.primary.medium.main-images-slide__link Узнать подробнее
+        .main-block__container.container
+            .main-block__thumbs
+                .main-block__thumbs--swiper.swiper(thumbsSlider="")
+                    .swiper-wrapper
+                        .swiper-slide
+                            .main-block__thumbs--slide
+                                .main-thumbs-slide
+                                    p.main-thumbs-slide__title Безупречная улыбка за одно посещение
+                                    .main-thumbs-slide__row
+                                        span
+                        .swiper-slide
+                            .main-block__thumbs--slide
+                                .main-thumbs-slide
+                                    p.main-thumbs-slide__title Идеальное очищение ваших зубов
+                                    .main-thumbs-slide__row
+                                        span
+                        .swiper-slide
+                            .main-block__thumbs--slide
+                                .main-thumbs-slide
+                                    p.main-thumbs-slide__title Восстановите утраченный зуб в день его удаления
+                                    .main-thumbs-slide__row
+                                        span
+                        .swiper-slide
+                            .main-block__thumbs--slide
+                                .main-thumbs-slide
+                                    p.main-thumbs-slide__title Идеальное очищение ваших зубов
+                                    .main-thumbs-slide__row
+                                        span

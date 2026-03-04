@@ -1,0 +1,124 @@
+extends ../../app/pug/layouts/base-secondary
+
+append vars
+  - title = "Services"
+  - description = "Описание Services"
+
+append content
+    +regPage('services')
+    +regComponent('breadcrumbs', true, true)
+    +regBlock('banner-consultation', true, true)
+    +regBlock('map', true, true)
+
+    .page-general
+        .page-general__breadcrumbs
+            +breadcrumbs(['Главная', 'Услуги'])
+        .page-general__content
+            .page-services
+                ul.page-services__list
+                    li.service-card
+                        .service-card__inner
+                            .service-card__image
+                                img(src="./images/page-services/1.webp", alt="")
+                            .service-card__info
+                                a(href="#").service-card__category Лечение и эстетика
+                                ul.service-card__list
+                                    li
+                                        a(href="#") Лечение кариеса
+                                    li
+                                        a(href="#") Гигиена и&nbsp;профилактика
+                                    li
+                                        a(href="#") Лечение пульпита
+                                    li
+                                        a(href="#") Лечение периодонтита
+                                    li
+                                        a(href="#") Отбеливание зубов
+                                    li
+                                        a(href="#") Реставрация зубов
+                    li.service-card
+                        .service-card__inner
+                            .service-card__image
+                                img(src="./images/page-services/2.webp", alt="")
+                            .service-card__info
+                                a(href="#").service-card__category Хирургия
+                                ul.service-card__list
+                                    li
+                                        a(href="#") Удаление зубов
+                                    li
+                                        a(href="#") Синус лифтинг и костная пластика
+                    li.service-card
+                        .service-card__inner
+                            .service-card__image
+                                img(src="./images/page-services/3.webp", alt="")
+                            .service-card__info
+                                a(href="#").service-card__category Имплантация
+                                ul.service-card__list
+                                    li
+                                        a(href="#") Лечение кариеса
+                                    li
+                                        a(href="#") Гигиена и&nbsp;профилактика
+                                    li
+                                        a(href="#") Лечение пульпита
+                                    li
+                                        a(href="#") Лечение периодонтита
+                                    li
+                                        a(href="#") Отбеливание зубов
+                                    li
+                                        a(href="#") Реставрация зубов
+                    li.service-card
+                        .service-card__inner
+                            .service-card__image
+                                img(src="./images/page-services/4.webp", alt="")
+                            .service-card__info
+                                a(href="#").service-card__category Протезирование
+                                ul.service-card__list
+                                    li
+                                        a(href="#") Коронки из диоксида циркония
+                                    li
+                                        a(href="#") Металлокерамические коронки и мостовидные протезы
+                                    li
+                                        a(href="#") Виниры и вкладки
+                                    li
+                                        a(href="#") Съемные протезы
+                                    li
+                                        a(href="#") Протезирование All-on-four
+                    li.service-card
+                        .service-card__inner
+                            .service-card__image
+                                img(src="./images/page-services/5.webp", alt="")
+                            .service-card__info
+                                a(href="#").service-card__category Ортодонтия
+                                .service-card__description
+                                    p Когда нужно выровнять зубы и исправить прикус
+                                a(href="#").btn.small.secondary.service-card__link Подробнее
+                    li.service-card
+                        .service-card__inner
+                            .service-card__image
+                                img(src="./images/page-services/6.webp", alt="")
+                            .service-card__info
+                                a(href="#").service-card__category Пародонтия
+                                .service-card__description
+                                    p Когда нужно выровнять зубы и исправить прикус
+                                a(href="#").btn.small.secondary.service-card__link Подробнее
+                    li.service-card
+                        .service-card__inner
+                            .service-card__image
+                                img(src="./images/page-services/7.webp", alt="")
+                            .service-card__info
+                                a(href="#").service-card__category Детская стоматология
+                                .service-card__description
+                                    p Когда нужно выровнять зубы и исправить прикус
+                                a(href="#").btn.small.secondary.service-card__link Подробнее
+                    li.service-card
+                        .service-card__inner
+                            .service-card__image
+                                img(src="./images/page-services/8.webp", alt="")
+                            .service-card__info
+                                a(href="#").service-card__category Диагностика
+                                .service-card__description
+                                    p Когда беспокоят проблемы с дёснами или подвижность зубов
+                                a(href="#").btn.small.secondary.service-card__link Подробнее
+                section.page-services__banner-consultation
+                    +bannerConsultation()
+                section.page-services__map
+                    +map()

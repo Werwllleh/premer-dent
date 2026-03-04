@@ -1,0 +1,29 @@
+mixin clinicAbout(title)
+    //- регистрация
+    //- +regLibrary('lib-name/lib.css', 'lib-name/lib.js')
+    //- +regComponent('component-name', true, true)
+
+    //clinic-about
+    .clinic-about&attributes(attributes)
+        .clinic-about__body
+            .clinic-about__left
+                p.h2.clinic-about__title= title
+            .clinic-about__right
+                .clinic-about__text
+                    p
+                        b «Премьер Дент Клиник» — это инновационный центр и член Стоматологической ассоциации России.
+                        |
+                        |Это подтверждает высокий профессионализм наших специалистов и использование эффективных и безопасных методов лечения
+                .clinic-about__reviews
+                    a(href="#").clinic-about__review.ya
+                        span.clinic-about__review--estimation 4.6
+                        span.clinic-about__review--area
+                            +svg('ya')
+                    a(href="#").clinic-about__review.prodoctorov
+                        span.clinic-about__review--estimation 4.0
+                        span.clinic-about__review--area
+                            +svg('prodoctorov')
+                    a(href="#").clinic-about__review.doctu
+                        span.clinic-about__review--estimation 4.5
+                        span.clinic-about__review--area
+                            +svg('doctu')

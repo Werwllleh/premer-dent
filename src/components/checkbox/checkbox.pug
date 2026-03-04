@@ -1,0 +1,9 @@
+mixin checkbox(name, label, value, checked)
+    //- регистрация
+    //- +regLibrary('lib-name/lib.css', 'lib-name/lib.js')
+    //- +regComponent('component-name', true, true)
+
+    //checkbox
+    label.checkbox&attributes(attributes)
+        input.checkbox__input(type="checkbox", name=name, value=value, checked=checked)
+        span.checkbox__label= label

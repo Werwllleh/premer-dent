@@ -1,0 +1,41 @@
+mixin otherDoctors()
+    //- регистрация
+    //- +regLibrary('lib-name/lib.css', 'lib-name/lib.js')
+    //- +regComponent('component-name', true, true)
+
+    //other-doctors
+    .other-doctors&attributes(attributes)
+        p.h2.other-doctors__title Другие врачи клиники
+        .other-doctors__slider
+            button.other-doctors__slider--button-prev
+                +svg("arrow-left2")
+            button.other-doctors__slider--button-next
+                +svg("arrow-left2")
+            .swiper
+                .swiper-wrapper
+                    .swiper-slide
+                        +doctorCard("Стаж 21 год", "Авдошина Юлия Владимировна", "Зубной врач", "1")
+                    .swiper-slide
+                        +doctorCard("Стаж 36 лет", "Аксёнова Галина Александровна", "Главный врач, врач стоматолог-терапевт ", "2")
+                    .swiper-slide
+                        +doctorCard("Стаж 9 лет", "Выселкина Анастасия Дмитриевнa", "Врач стоматолог-терапевт", "3")
+                    .swiper-slide
+                        +doctorCard("Стаж 24 года", "Дементьева Елена Александровна", "Зубной врач-гигиенист", "4")
+                    .swiper-slide
+                        +doctorCard("Стаж 28 лет", "Кашкорова Анна Александровна", "Детский врач", "5")
+                    .swiper-slide
+                        +doctorCard("Стаж 30 лет", "Кузяева Наталья Александровна", "Врач-стоматолог-терапевт", "6")
+                    .swiper-slide
+                        +doctorCard("Стаж 31 год", "Мухаметзянов Айрат Абуллович", "Врач стоматолог-хирург", "7")
+                    .swiper-slide
+                        +doctorCard("Стаж 3 года", "Воронцов Артём Михайлович", "Врач-стоматолог")
+                    .swiper-slide
+                        +doctorCard("Стаж 3 года", "Пушкарева Дарья Александровна", "Врач-стоматолог-терапевт", "8")
+                    .swiper-slide
+                        +doctorCard("Стаж 36 лет", "Яковлева Марина Васильевна", "Врач стоматолог-ортодонт")
+                    .swiper-slide
+                        +doctorCard("Стаж 00 лет", "Сюндюков Анатолий Иванович", "------", "9")
+                    .swiper-slide
+                        +doctorCard("Стаж 4 года", "Соловьёв Данила Андреевич", "Врач-стоматолог-ортопед")
+                    .swiper-slide
+                        +doctorCard("Стаж 36 лет", "Яковлева Марина Васильевна", "Врач стоматолог-ортодонт")

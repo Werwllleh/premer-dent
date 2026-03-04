@@ -1,0 +1,30 @@
+mixin modalConsultation()
+    //- регистрация
+    //- +regLibrary('lib-name/lib.css', 'lib-name/lib.js')
+    //- +regComponent('component-name', true, true)
+    +regComponent('form-consultation', true)
+
+    //modal-consultation
+    .modal-consultation__inner&attributes(attributes)
+        .modal-consultation__body
+            .modal-consultation__top
+                .modal-consultation__form
+                    +formConsultation()
+            .modal-consultation__bottom
+                .modal-consultation__contacts
+                    p.modal-consultation__contacts--description Либо свяжитесь c нами самостоятельно
+                    ul.modal-consultation__contacts--list
+                        li
+                            a(href="tel:+7 8422416426").btn.secondary.small
+                                span.text +7 (8422) 41-64-26
+                        li
+                            a(href="#").btn.secondary.small.whatsapp
+                                span.text WhatsApp
+                                span.icon
+                                    +svg("whatsapp")
+
+                        li
+                            a(href="#").btn.secondary.small.telegram
+                                span.text Telegram
+                                span.icon
+                                    +svg("telegram")

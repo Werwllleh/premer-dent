@@ -1,0 +1,20 @@
+//@use "../../../node_modules/reset-css/reset.css";
+
+@use "./variables";
+@use "./mixins";
+@use "./fonts";
+@use "./typography";
+@use "./app";
+
+@use "./components/button";
+@use "./components/socials-list";
+@use "./components/segmented";
+@use "./components/form";
+@use "./components/doctor-card";
+@use "./components/doctor-publication-card";
+@use "./components/video-card";
+@use "./components/review-card";
+
+@use "./blocks/other-doctors";
+
+@use "./pages";

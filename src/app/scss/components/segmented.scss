@@ -1,0 +1,69 @@
+@use '../variables.scss' as *;
+
+:root {
+  --seg-bg: rgba(5, 80, 130, 0.05);
+  --seg-active-bg: #fff;
+  --seg-border: rgba(5, 80, 130, 0.05);
+  --seg-color: #898ea2;
+  --seg-active-color: #262633;
+  --seg-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --seg-radius: 16px;
+}
+
+.segmented {
+  display: flex;
+  background: var(--seg-bg);
+  border-radius: var(--seg-radius);
+  padding: 4px;
+  //border: 1px solid var(--seg-border);
+  user-select: none;
+  font-family: system-ui, sans-serif;
+  //box-shadow: var(--seg-shadow);
+  overflow: hidden;
+
+  &__wrap {
+    flex: 1;
+    position: relative;
+    display: flex;
+    border-radius: var(--seg-radius);
+    //overflow: hidden;
+  }
+
+  &__item {
+    position: relative;
+    z-index: 2;
+    flex: 1;
+    padding: 11px 16px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    color: var(--seg-color);
+    border-radius: calc(var(--seg-radius) - 2px);
+    transition: color $transition-default, background-color $transition-default;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 1.4;
+
+    &:hover {
+      color: var(--seg-active-color);
+    }
+
+    &.active {
+      color: var(--seg-active-color);
+    }
+  }
+
+  &__thumb {
+    position: absolute;
+    z-index: 1;
+    background: var(--seg-active-bg);
+    border-radius: calc(var(--seg-radius) - 2px);
+    box-shadow: var(--seg-shadow);
+    transition: all $transition-default;
+    will-change: transform, width;
+  }
+}

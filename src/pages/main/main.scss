@@ -1,0 +1,40 @@
+@use '../../app/scss/variables.scss' as *;
+@use '../../app/scss/mixins.scss' as *;
+
+// main
+.page-main {
+
+  &__main {
+    height: 100vh;
+    width: 100vw;
+    margin-left: 50%;
+    transform: translateX(-50%);
+
+    @media (max-width: 500px) {
+      height: calc(100vh - 100px);
+    }
+  }
+
+  &__clinic-achievements {
+
+    .h2 {
+      margin-bottom: 24px;
+
+      @include semiDesktop {
+        display: none;
+      }
+    }
+  }
+
+  section {
+
+  }
+
+  section + section {
+    margin-top: 120px;
+
+    @include desktop {
+      margin-top: 180px;
+    }
+  }
+}

@@ -1,0 +1,30 @@
+mixin reviewCard(author, score, text, service)
+    //- регистрация
+    //- +regLibrary('lib-name/lib.css', 'lib-name/lib.js')
+    //- +regComponent('component-name', true, true)
+
+    //review-card
+    .review-card&attributes(attributes)
+        .review-card__body
+            .review-card__top
+                p.review-card__name= author
+                span.review-card__score
+                    span
+                        +svg("star2")
+                    = score
+            .review-card__middle
+                .review-card__text
+                    p= text
+            .review-card__footer
+                .review-card__service
+                    | Опубликовано с
+                    |
+                    if (service === 'ya')
+                        a(href="#", target="_blank", rel="noreferrer noopener").ya
+                            +svg("rsya")
+                    else if (service === '2gis')
+                        a(href="#", target="_blank", rel="noreferrer noopener").gis
+                            +svg("rs2g")
+                    else
+                        a(href="#", target="_blank", rel="noreferrer noopener").pd
+                            +svg("rspd")

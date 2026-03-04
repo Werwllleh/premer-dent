@@ -1,0 +1,50 @@
+@use '../../app/scss/variables' as *;
+@use '../../app/scss/mixins' as *;
+
+// form-consultation
+.form-consultation {
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: 25px 0;
+
+    @include mobile {
+      gap: 40px 0;
+    }
+  }
+
+  &__top {}
+
+  &__title {}
+
+  &__description {
+    margin-top: 20px;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 1.4;
+    color: $text-paragraph;
+  }
+
+  &__form {
+
+    &--field {
+
+      & + & {
+        margin-top: 14px;
+      }
+    }
+
+    &--submit {
+      margin-top: 28px;
+      width: 100%;
+    }
+  }
+
+  .segmented {
+
+
+  }
+
+  &__bottom {}
+}

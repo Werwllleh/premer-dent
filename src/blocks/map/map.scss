@@ -1,0 +1,173 @@
+@use '../../app/scss/variables.scss' as *;
+@use '../../app/scss/mixins' as *;
+
+// map
+.map {
+  position: relative;
+
+  @include tablet {
+    padding-block: 80px;
+  }
+
+  &__container {}
+
+  &__inner {
+
+  }
+
+  &__info {
+    position: relative;
+    z-index: 1;
+    border-radius: 24px;
+    padding: 20px;
+    box-shadow: 0 12px 40px 0 rgba(38, 38, 51, 0.08), 0 4px 12px 0 rgba(38, 38, 51, 0.06);
+    background: $bg-white;
+    overflow: hidden;
+
+    @include tablet {
+      padding: 24px;
+      box-shadow: 0 20px 32px -4px rgba(38, 38, 51, 0.08), 0 8px 12px -4px rgba(38, 38, 51, 0.08);
+      max-width: 400px;
+    }
+
+    &--contacts {
+      margin-top: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    &--footer {
+
+      @include tablet {
+        display: none;
+      }
+
+      button {
+        width: 100%;
+      }
+    }
+  }
+
+  &__title {}
+
+  &__images {
+    margin-top: 16px;
+
+    .swiper {
+      margin-inline: -24px;
+      padding-inline: 24px;
+
+      .swiper-wrapper {
+        align-items: stretch;
+
+        .swiper-slide {
+          width: auto;
+          height: auto;
+        }
+      }
+    }
+
+    &--item {
+      img {
+        border-radius: 8px;
+        width: 130px;
+        height: 130px;
+
+        @include tablet {
+          width: 100px;
+          height: 100px;
+        }
+      }
+    }
+  }
+
+  &__category {
+
+    & > span {
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 1.4;
+      color: $text-secondary;
+    }
+
+    &--value {
+      margin-top: 4px;
+
+      a, p, li {
+        font-weight: 400;
+        font-size: 17px;
+        line-height: 1.4;
+        color: $text;
+      }
+
+      a {
+        &:hover {
+          color: $primary;
+        }
+      }
+
+      ul {
+
+        li {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+
+        li + li {
+          margin-top: 4px;
+        }
+      }
+
+    }
+  }
+
+  &__view {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    z-index: 0;
+    width: 100vw;
+    margin-left: 50%;
+    transform: translateX(-50%);
+
+    @include tablet {
+      display: block;
+    }
+
+  }
+}
+
+.map-element {
+  height: 100%;
+  width: 100%;
+
+  .map-marker {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+
+    img {
+      object-fit: contain;
+      width: 100%;
+      height: 100%;
+      transition: transform $transition-default;
+    }
+
+    &:hover {
+
+      img {
+        transform: scale(1.15);
+      }
+    }
+  }
+}
+
+

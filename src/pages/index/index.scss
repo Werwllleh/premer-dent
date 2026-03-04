@@ -1,0 +1,43 @@
+@use '../../app/scss/variables.scss' as *;
+
+// index
+.page-index {
+  position: relative;
+  padding-top: 140px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    transform: translateX(-50%);
+    margin-left: 50%;
+    height: 100%;
+    background-color: $text-teriary;
+  }
+
+  &__list {
+    padding-block: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    li {
+
+      a {
+        display: inline-flex;
+        align-items: center;
+        padding-block: 10px;
+        font-size: 20px;
+        line-height: 1;
+        color: $text-light;
+
+        &:hover {
+          color: $primary;
+        }
+      }
+    }
+  }
+}

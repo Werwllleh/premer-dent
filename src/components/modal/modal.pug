@@ -1,0 +1,24 @@
+mixin modal(id, content)
+    //- регистрация
+    //- +regLib('lib-name/lib.js', 'lib-name/lib.css')
+    //- +regComponent('component-name', true, true)
+    +regBlock('modal-consultation', true)
+    +regBlock('modal-success', true)
+    +regComponent('map-modal', true, true)
+    //modal
+    .modal(class="modal-" + id)&attributes(attributes)
+        .modal__window
+            button.btn.modal__close(type="button", aria-label="Закрыть")
+                +svg('close')
+            .modal__content
+                case content
+                    when 'modal1'
+                        include content/modal1
+                    when 'modal2'
+                        include content/modal2
+                    when 'map'
+                        +mapModal()
+                    when 'consultation'
+                        +modalConsultation()
+                    when 'success'
+                        +modalSuccess()

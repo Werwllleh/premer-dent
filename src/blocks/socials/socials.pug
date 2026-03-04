@@ -1,0 +1,18 @@
+mixin socials()
+    //- регистрация
+    //- +regLibrary('lib-name/lib.css', 'lib-name/lib.js')
+    //- +regComponent('component-name', true, true)
+
+    //socials
+    .socials&attributes(attributes)
+        .socials__body
+            ul.socials__list
+                li
+                    a(href="#").socials__item.whatsapp
+                        +svg("whatsapp")
+                li
+                    a(href="#").socials__item.telegram
+                        +svg("telegram")
+                li
+                    a(href="#").socials__item.vk
+                        +svg("vk")

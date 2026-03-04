@@ -1,0 +1,24 @@
+mixin regLibrary(style, script)
+    if style
+        - stylesLibs.push(style)
+    if script
+        - scriptsLibs.push(script)
+
+mixin regComponent(name, haveStyles, haveScripts)
+    if haveStyles
+        - stylesComponents.push(name)
+    if haveScripts
+        - scriptsComponents.push(name)
+
+mixin regBlock(name, haveStyles, haveScripts)
+    if haveStyles
+        - stylesBlocks.push(name)
+    if haveScripts
+        - scriptsBlocks.push(name)
+
+mixin regPage(name, haveStyles, haveScripts)
+    if haveStyles
+        - stylePage = name
+    if haveScripts
+        - scriptPage = name
+
