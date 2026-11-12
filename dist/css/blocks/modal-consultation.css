@@ -1,0 +1,132 @@
+.modal-consultation__top {
+  padding-bottom: 20px;
+}
+@media (min-width: 550px) {
+  .modal-consultation__top {
+    padding-bottom: 60px;
+  }
+}
+@media (min-width: 768px) {
+  .modal-consultation__top {
+    padding-bottom: 90px;
+  }
+}
+.modal-consultation__form .form-consultation__body {
+  display: flex;
+}
+@media (min-width: 1024px) {
+  .modal-consultation__form .form-consultation__body {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+  }
+}
+@media (min-width: 1024px) {
+  .modal-consultation__form .form-consultation__top {
+    max-width: 400px;
+  }
+}
+@media (min-width: 1024px) {
+  .modal-consultation__form .form-consultation__title {
+    font-size: 32px;
+  }
+}
+@media (min-width: 1024px) {
+  .modal-consultation__form .form-consultation__bottom {
+    width: 100%;
+    max-width: 420px;
+  }
+}
+.modal-consultation__bottom {
+  position: relative;
+  padding-top: 20px;
+}
+@media (min-width: 768px) {
+  .modal-consultation__bottom {
+    padding-top: 48px;
+  }
+}
+.modal-consultation__bottom::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.1);
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+.modal-consultation__contacts {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.modal-consultation__contacts--description {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.4;
+  color: #262633;
+}
+.modal-consultation__contacts--list {
+  display: flex;
+  align-items: stretch;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+@media (min-width: 1024px) {
+  .modal-consultation__contacts--list {
+    flex-wrap: nowrap;
+  }
+}
+.modal-consultation__contacts--list li a {
+  height: 52px;
+}
+.modal-consultation__contacts--list li a .text {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #262633;
+  white-space: nowrap;
+}
+.modal-consultation__contacts--list li a.whatsapp .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal-consultation__contacts--list li a.whatsapp .icon svg {
+  width: 20px;
+  height: 20px;
+}
+.modal-consultation__contacts--list li a.telegram .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal-consultation__contacts--list li a.telegram .icon svg {
+  width: 18px;
+  height: 15px;
+}
+@media (max-width: 992px) {
+  .modal-consultation__contacts--list li a.whatsapp, .modal-consultation__contacts--list li a.telegram {
+    padding: 16px;
+  }
+}
+.modal-consultation__contacts--list li a.whatsapp .text, .modal-consultation__contacts--list li a.telegram .text {
+  display: none;
+}
+@media (min-width: 992px) {
+  .modal-consultation__contacts--list li a.whatsapp .text, .modal-consultation__contacts--list li a.telegram .text {
+    display: block;
+  }
+}
+.modal-consultation__contacts--list li a.whatsapp .icon, .modal-consultation__contacts--list li a.telegram .icon {
+  display: block;
+}
+@media (min-width: 992px) {
+  .modal-consultation__contacts--list li a.whatsapp .icon, .modal-consultation__contacts--list li a.telegram .icon {
+    display: none;
+  }
+}

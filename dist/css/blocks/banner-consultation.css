@@ -1,0 +1,146 @@
+.banner-consultation {
+  border-radius: 24px;
+  background-color: #f5f8fa;
+  position: relative;
+  margin-inline: -16px;
+}
+@media (min-width: 768px) {
+  .banner-consultation {
+    margin-inline: 0;
+  }
+}
+@media (min-width: 1440px) {
+  .banner-consultation {
+    margin-inline: -48px;
+  }
+}
+.banner-consultation__body {
+  display: grid;
+  grid-template-columns: 100%;
+  gap: 35px;
+}
+@media (min-width: 992px) {
+  .banner-consultation__body {
+    grid-template-columns: 470px calc(100% - 500px);
+    justify-content: space-between;
+    gap: 30px;
+  }
+}
+.banner-consultation__left {
+  padding: 40px 16px 0;
+}
+@media (min-width: 768px) {
+  .banner-consultation__left {
+    padding: 40px 20px 0;
+  }
+}
+@media (min-width: 992px) {
+  .banner-consultation__left {
+    padding: 40px 0 64px 50px;
+  }
+}
+.banner-consultation__right {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+}
+.banner-consultation__vector {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  display: flex;
+  justify-content: center;
+}
+@media (min-width: 992px) {
+  .banner-consultation__vector {
+    top: 0;
+    justify-content: flex-end;
+    z-index: 0;
+  }
+}
+.banner-consultation__vector svg {
+  width: 100%;
+  height: 100%;
+  color: #ffffff;
+}
+@media (min-width: 992px) {
+  .banner-consultation__vector svg {
+    max-width: 790px;
+    max-height: 610px;
+  }
+}
+.banner-consultation__image {
+  position: relative;
+  z-index: 1;
+  margin: 0 auto;
+}
+@media (min-width: 992px) {
+  .banner-consultation__image {
+    position: absolute;
+    right: 50px;
+    left: 50px;
+    bottom: 0;
+  }
+}
+.banner-consultation__image img {
+  width: 100%;
+  height: 100%;
+  max-width: 305px;
+  max-height: 330px;
+  object-fit: contain;
+  object-position: center;
+  pointer-events: none;
+}
+@media (min-width: 992px) {
+  .banner-consultation__image img {
+    object-position: right;
+  }
+}
+@media (min-width: 1024px) {
+  .banner-consultation__image img {
+    max-width: 710px;
+    max-height: 650px;
+  }
+}
+.banner-consultation .banner-consultation-doctor {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  border-radius: 12px;
+  padding: 12px;
+  z-index: 1;
+  backdrop-filter: blur(10px);
+  background: linear-gradient(90deg, rgba(38, 38, 51, 0.2) 0%, rgba(38, 38, 51, 0.25) 100%);
+}
+@media (min-width: 768px) {
+  .banner-consultation .banner-consultation-doctor {
+    right: 20px;
+    bottom: 20px;
+  }
+}
+.banner-consultation .banner-consultation-doctor__name {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.4;
+  color: #ffffff;
+}
+.banner-consultation .banner-consultation-doctor__position {
+  margin-top: 2px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.4;
+  color: #ffffff;
+  opacity: 0.8;
+}
+.banner-consultation .banner-consultation-doctor__experience {
+  display: block;
+  margin-top: 12px;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 1.16667;
+  text-transform: uppercase;
+  color: #ffffff;
+}

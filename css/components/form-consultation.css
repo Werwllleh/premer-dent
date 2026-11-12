@@ -1,0 +1,24 @@
+.form-consultation__body {
+  display: flex;
+  flex-direction: column;
+  gap: 25px 0;
+}
+@media (min-width: 550px) {
+  .form-consultation__body {
+    gap: 40px 0;
+  }
+}
+.form-consultation__description {
+  margin-top: 20px;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 1.4;
+  color: #424352;
+}
+.form-consultation__form--field + .form-consultation__form--field {
+  margin-top: 14px;
+}
+.form-consultation__form--submit {
+  margin-top: 28px;
+  width: 100%;
+}
